@@ -1,0 +1,2483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Kanwal Beauty | Professional Beauty & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --forest: #2d4a3e;
+            --forest-light: #3d6357;
+            --forest-pale: #eef4f1;
+            --champagne: #c9a84c;
+            --champagne-light: #e8d5a3;
+            --champagne-pale: #fdf8ee;
+            --ivory: #faf8f3;
+            --cream: #f5f0e8;
+            --bark: #6b5b45;
+            --charcoal: #2a2a2a;
+            --mist: #8fa99d;
+            --white: #ffffff;
+            --shadow: rgba(45,74,62,0.12);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--ivory);
+            color: var(--charcoal);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.25;
+        }
+
+        /* ── NAVIGATION ────────────────────────────────── */
+        nav {
+            background: var(--forest);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--champagne);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: var(--champagne-light);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .logo span { color: var(--champagne); font-style: italic; }
+
+        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.8);
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--champagne);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--champagne-light); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .admin-nav-btn {
+            background: var(--champagne) !important;
+            color: var(--forest) !important;
+            padding: 0.4rem 1.2rem !important;
+            border-radius: 2px !important;
+            font-weight: 600 !important;
+        }
+
+        .admin-nav-btn::after { display: none !important; }
+
+        /* ── HERO ──────────────────────────────────────── */
+        .hero {
+            background: var(--forest);
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,168,76,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 20% 80%, rgba(61,99,87,0.6) 0%, transparent 60%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -5%;
+            width: 55vw;
+            height: 130%;
+            background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.06) 50%, transparent 100%);
+            border-left: 1px solid rgba(201,168,76,0.15);
+            transform: skewX(-8deg);
+        }
+
+        .hero-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 6rem 2.5rem;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .hero-text {}
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--champagne);
+            border-bottom: 1px solid var(--champagne);
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 5vw, 5.5rem);
+            font-weight: 300;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--champagne-light);
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            line-height: 1.9;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--champagne);
+            color: var(--forest);
+            padding: 1rem 2.2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .hero-cta:hover {
+            background: var(--champagne-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(201,168,76,0.3);
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .hero-stat-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(201,168,76,0.2);
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-stat-card:first-child {
+            border-left: 3px solid var(--champagne);
+        }
+
+        .hero-stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: var(--champagne-light);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ── SECTIONS ──────────────────────────────────── */
+        .page-section {
+            padding: 6rem 2.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--champagne);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 400;
+            color: var(--forest);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--champagne);
+            margin: 1rem auto 0;
+        }
+
+        /* ── ABOUT ─────────────────────────────────────── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-image-wrap {
+            position: relative;
+        }
+
+        .about-image-wrap::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid var(--champagne);
+            z-index: 0;
+        }
+
+        .about-image-wrap img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-label {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            z-index: 2;
+            background: var(--forest);
+            color: var(--champagne-light);
+            padding: 1.2rem 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .about-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--champagne);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .about-heading {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 400;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            color: var(--bark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.9;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--champagne-light);
+            margin-top: 2.5rem;
+            border: 1px solid var(--champagne-light);
+        }
+
+        .stat-box {
+            background: var(--ivory);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--forest);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--mist);
+        }
+
+        /* ── BLOG GRID ─────────────────────────────────── */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--cream);
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px var(--shadow);
+        }
+
+        .blog-card-img {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+
+        .blog-card-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--forest);
+            color: var(--champagne-light);
+            padding: 0.25rem 0.8rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .edit-card-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--champagne);
+            color: var(--forest);
+            border: none;
+            padding: 0.3rem 0.7rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: none;
+            transition: background 0.2s;
+        }
+
+        .edit-card-btn:hover { background: var(--champagne-light); }
+        .admin-mode .edit-card-btn { display: block; }
+
+        .blog-card-body { padding: 1.8rem; }
+
+        .blog-card-date {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--mist);
+            margin-bottom: 0.7rem;
+        }
+
+        .blog-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.9rem;
+            color: var(--bark);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .blog-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--forest);
+            text-decoration: none;
+            border-bottom: 1px solid var(--champagne);
+            padding-bottom: 2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .blog-card-link:hover { color: var(--champagne); border-color: var(--forest); }
+
+        /* ── CONTACT ───────────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-cards { display: flex; flex-direction: column; gap: 1.5rem; }
+
+        .contact-card {
+            background: var(--white);
+            padding: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            border-left: 3px solid var(--champagne);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--forest);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--champagne-light);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-card h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--mist);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-card p { color: var(--charcoal); font-weight: 500; }
+
+        .social-row { display: flex; gap: 0.8rem; margin-top: 0.5rem; }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            background: var(--forest);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--champagne-light);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .social-btn:hover { background: var(--champagne); color: var(--forest); transform: translateY(-2px); }
+
+        .contact-form-box {
+            background: var(--forest);
+            padding: 3rem;
+        }
+
+        .contact-form-box .form-group { margin-bottom: 1.3rem; }
+
+        .contact-form-box label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-box input,
+        .contact-form-box textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form-box input:focus,
+        .contact-form-box textarea:focus {
+            outline: none;
+            border-color: var(--champagne);
+        }
+
+        .contact-form-box input::placeholder,
+        .contact-form-box textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+        .contact-submit {
+            width: 100%;
+            background: var(--champagne);
+            color: var(--forest);
+            border: none;
+            padding: 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'DM Sans', sans-serif;
+            margin-top: 0.5rem;
+        }
+
+        .contact-submit:hover {
+            background: var(--champagne-light);
+            transform: translateY(-2px);
+        }
+
+        /* ── ADMIN LOGIN ────────────────────────────────── */
+        .admin-login-wrap {
+            max-width: 480px;
+            margin: 5rem auto;
+            background: var(--forest);
+            padding: 3.5rem;
+        }
+
+        .admin-login-wrap h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--champagne-light);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .admin-login-wrap label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 0.5rem;
+        }
+
+        .admin-login-wrap input {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1.3rem;
+            transition: border-color 0.3s;
+        }
+
+        .admin-login-wrap input:focus { outline: none; border-color: var(--champagne); }
+
+        /* ── ADMIN PANEL ────────────────────────────────── */
+        .admin-panel-wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 2.5rem;
+        }
+
+        .admin-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--champagne);
+            margin-bottom: 2.5rem;
+        }
+
+        .admin-top h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--forest);
+        }
+
+        .admin-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 2rem;
+        }
+
+        .admin-sidebar {
+            background: var(--forest);
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        .admin-menu { list-style: none; }
+
+        .admin-menu li { margin-bottom: 0.3rem; }
+
+        .admin-menu a {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+
+        .admin-menu a:hover,
+        .admin-menu a.active {
+            color: var(--champagne-light);
+            border-left-color: var(--champagne);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .admin-content-box {
+            background: var(--white);
+            padding: 2.5rem;
+            border: 1px solid var(--cream);
+        }
+
+        .admin-section-block {
+            background: var(--ivory);
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--champagne);
+        }
+
+        .admin-section-block h4 {
+            font-size: 1rem;
+            color: var(--forest);
+            margin-bottom: 1rem;
+        }
+
+        .field-group { margin-bottom: 1.2rem; }
+
+        .field-group label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--mist);
+            margin-bottom: 0.4rem;
+        }
+
+        .field-group input,
+        .field-group textarea,
+        .field-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--cream);
+            background: var(--white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            transition: border-color 0.2s;
+        }
+
+        .field-group input:focus,
+        .field-group textarea:focus,
+        .field-group select:focus { outline: none; border-color: var(--champagne); }
+
+        .code-area {
+            width: 100%;
+            min-height: 380px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.88rem;
+            border: 1px solid var(--cream);
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .admin-blog-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+            background: var(--ivory);
+            margin-bottom: 0.8rem;
+            border-left: 2px solid var(--champagne-light);
+        }
+
+        .admin-blog-item strong { color: var(--forest); }
+        .admin-blog-item small { color: var(--mist); font-size: 0.8rem; }
+
+        .btn-row { display: flex; gap: 0.7rem; }
+
+        /* ── BUTTON SYSTEM ─────────────────────────────── */
+        .btn {
+            padding: 0.55rem 1.1rem;
+            border: none;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .btn-forest { background: var(--forest); color: white; }
+        .btn-forest:hover { background: var(--forest-light); }
+        .btn-champagne { background: var(--champagne); color: var(--forest); }
+        .btn-champagne:hover { background: var(--champagne-light); }
+        .btn-danger { background: #c0392b; color: white; }
+        .btn-danger:hover { background: #a93226; }
+        .btn-success { background: #27ae60; color: white; }
+        .btn-success:hover { background: #219a52; }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--forest);
+            color: var(--forest);
+        }
+        .btn-outline:hover { background: var(--forest); color: white; }
+
+        .btn-full {
+            width: 100%;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* ── ADMIN BADGE ─────────────────────────────── */
+        .admin-badge {
+            display: inline-block;
+            background: var(--champagne);
+            color: var(--forest);
+            padding: 2px 10px;
+            border-radius: 0;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+        }
+
+        /* ── BLOG DETAIL ────────────────────────────────── */
+        .blog-detail-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 4rem 4.5rem;
+            border-top: 4px solid var(--champagne);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--mist);
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 2.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover { color: var(--champagne); }
+
+        .blog-detail-header { text-align: center; margin-bottom: 3rem; }
+
+        .blog-detail-cat {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--champagne);
+            border: 1px solid var(--champagne);
+            padding: 0.25rem 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .blog-detail-header h1 {
+            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .blog-meta-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.8rem;
+            color: var(--mist);
+            letter-spacing: 0.08em;
+        }
+
+        .blog-feat-img {
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 3.5rem;
+        }
+
+        /* Blog content typography */
+        .blog-detail-body h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 500;
+            color: var(--forest);
+            margin: 3rem 0 1.2rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--champagne-light);
+        }
+
+        .blog-detail-body h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin: 2rem 0 0.8rem;
+        }
+
+        .blog-detail-body p {
+            font-size: 1.02rem;
+            color: #4a4a4a;
+            line-height: 1.95;
+            margin-bottom: 1.4rem;
+        }
+
+        .blog-detail-body ul,
+        .blog-detail-body ol {
+            margin: 0.5rem 0 1.5rem 1.5rem;
+            color: #4a4a4a;
+        }
+
+        .blog-detail-body li {
+            margin-bottom: 0.7rem;
+            line-height: 1.8;
+        }
+
+        /* Infographic box */
+        .info-box {
+            background: var(--champagne-pale);
+            border-left: 4px solid var(--champagne);
+            padding: 2.2rem;
+            margin: 2.5rem 0;
+        }
+
+        .info-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--forest);
+            margin-bottom: 1.2rem;
+        }
+
+        .info-box ul { list-style: none; padding: 0; margin: 0; }
+
+        .info-box li {
+            padding: 0.6rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.97rem;
+            line-height: 1.7;
+            border-bottom: 1px solid rgba(201,168,76,0.15);
+            color: var(--charcoal);
+        }
+
+        .info-box li:last-child { border-bottom: none; }
+
+        .info-box li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--champagne);
+            font-size: 0.5rem;
+            top: 0.95rem;
+        }
+
+        /* Key takeaways */
+        .takeaways-box {
+            background: var(--forest);
+            padding: 2.8rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .takeaways-box::before {
+            content: '✦';
+            position: absolute;
+            top: -20px;
+            right: 30px;
+            font-size: 8rem;
+            color: rgba(201,168,76,0.06);
+            font-family: serif;
+        }
+
+        .takeaways-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 400;
+            color: var(--champagne-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaways-box ul { list-style: none; padding: 0; margin: 0; }
+
+        .takeaways-box li {
+            padding: 0.85rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.97rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .takeaways-box li:last-child { border-bottom: none; }
+
+        .takeaways-box li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--champagne);
+            font-weight: bold;
+        }
+
+        /* Conclusion box */
+        .conclusion-box {
+            background: var(--forest-pale);
+            border: 1px solid rgba(45,74,62,0.15);
+            border-left: 4px solid var(--forest);
+            padding: 2.5rem;
+            margin: 3rem 0 2rem;
+        }
+
+        .conclusion-box h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: var(--forest);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0;
+            border-bottom: none !important;
+        }
+
+        .conclusion-box p {
+            color: var(--bark);
+            line-height: 1.95;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .conclusion-box p:last-child { margin-bottom: 0; }
+
+        /* Highlight quote */
+        .highlight-box {
+            border-left: 3px solid var(--champagne);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            background: var(--champagne-pale);
+        }
+
+        .highlight-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--forest);
+            margin: 0;
+        }
+
+        /* Tip box */
+        .tip-box {
+            background: var(--forest-pale);
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+        }
+
+        .tip-box p { color: var(--forest); margin: 0; font-size: 0.95rem; }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 0.5rem; }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+            background: var(--ivory);
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+            color: var(--charcoal);
+        }
+
+        .faq-question:hover { background: var(--champagne-pale); }
+
+        .faq-question i { color: var(--champagne); transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.3s;
+            background: var(--white);
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+            padding: 1.3rem 1.5rem;
+        }
+
+        .faq-item.active .faq-question { background: var(--champagne-pale); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+        .faq-answer p { color: var(--bark); font-size: 0.95rem; margin: 0; }
+
+        /* ── MODAL ─────────────────────────────────────── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal-box {
+            background: var(--white);
+            width: 90%;
+            max-width: 820px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 3rem;
+            position: relative;
+            border-top: 4px solid var(--champagne);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--mist);
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover { color: var(--charcoal); }
+
+        .modal-box h3 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ── FOOTER ────────────────────────────────────── */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.7);
+            padding: 4rem 2.5rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--champagne-light);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p { font-size: 0.9rem; line-height: 1.8; }
+
+        .footer-col h4 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--champagne);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: var(--champagne-light); }
+
+        .footer-col p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* ── UTILITIES ─────────────────────────────────── */
+        .hidden { display: none !important; }
+
+        .fade-in {
+            animation: fadeUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page { }
+
+        /* ── RESPONSIVE ────────────────────────────────── */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-stats { flex-direction: row; }
+            .about-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+            .admin-layout { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hero { min-height: auto; }
+            .hero-inner { padding: 4rem 1.5rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-detail-wrap { padding: 2.5rem 1.5rem; }
+            .stats-row { grid-template-columns: 1fr; }
+            .blog-meta-row { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <a href="#" class="logo" onclick="showPage('home')">Maria <span>Kanwal</span> Beauty</a>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('blogs')">Blogs</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            <li><a href="#" class="admin-nav-btn" onclick="showPage('admin-login')">Admin</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ═══════════ HOME PAGE ═══════════ -->
+<div id="home-page" class="page">
+    <div class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <span class="hero-eyebrow">Est. 2026 · Beauty & Wellness</span>
+                <h1 id="home-hero-title">Discover Your <em>Natural</em> Beauty</h1>
+                <p id="home-hero-text">Expert beauty tips, skincare routines, and wellness advice curated by Maria Kanwal to help you look and feel your best in 2026</p>
+                <a href="#" class="hero-cta" onclick="showPage('blogs')">Explore Articles <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat-card">
+                    <div class="hero-stat-number" id="stat-1-hero">10+</div>
+                    <div class="hero-stat-label">Years of Expertise</div>
+                </div>
+                <div class="hero-stat-card">
+                    <div class="hero-stat-number" id="stat-2-hero">500+</div>
+                    <div class="hero-stat-label">Articles Published</div>
+                </div>
+                <div class="hero-stat-card">
+                    <div class="hero-stat-number" id="stat-3-hero">50k+</div>
+                    <div class="hero-stat-label">Readers Worldwide</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <div class="section-header">
+            <span class="section-eyebrow">Curated For You</span>
+            <h2 class="section-title" id="home-featured-title">Featured Articles</h2>
+        </div>
+        <div class="blog-grid" id="featured-blogs"></div>
+    </div>
+</div>
+
+<!-- ═══════════ ABOUT PAGE ═══════════ -->
+<div id="about-page" class="page hidden">
+    <div class="page-section">
+        <div class="about-grid">
+            <div class="about-image-wrap">
+                <img id="about-image" src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600" alt="Maria Kanwal">
+                <div class="about-label">Maria Kanwal</div>
+            </div>
+            <div class="about-text">
+                <span class="about-eyebrow" id="about-title">About Maria Kanwal</span>
+                <h2 class="about-heading" id="about-subtitle">Beauty Expert & Wellness Advocate</h2>
+                <div id="about-content">
+                    <p>Welcome to my beauty sanctuary! I'm Maria Kanwal, a certified beauty therapist and wellness coach with over 10 years of experience in the beauty industry.</p>
+                    <p>My mission is to empower women with knowledge about skincare, makeup techniques, and holistic wellness practices. I believe that true beauty comes from within, and my goal is to help you discover and enhance your natural radiance.</p>
+                    <p>Through my blog, I share evidence-based beauty tips, product reviews, DIY recipes, and lifestyle advice that have transformed the lives of thousands of women worldwide.</p>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <span class="stat-number" id="stat-1">10+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" id="stat-2">500+</span>
+                        <span class="stat-label">Articles Published</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" id="stat-3">50k+</span>
+                        <span class="stat-label">Happy Readers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ BLOGS PAGE ═══════════ -->
+<div id="blogs-page" class="page hidden">
+    <div class="page-section">
+        <div class="section-header">
+            <span class="section-eyebrow">Knowledge & Inspiration</span>
+            <h2 class="section-title" id="blogs-title">Beauty Blog</h2>
+        </div>
+        <div class="blog-grid" id="all-blogs"></div>
+    </div>
+</div>
+
+<!-- ═══════════ BLOG DETAIL ═══════════ -->
+<div id="blog-detail-page" class="page hidden">
+    <div class="page-section" style="padding-top:3rem; padding-bottom:4rem;">
+        <div class="blog-detail-wrap">
+            <div id="blog-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ CONTACT PAGE ═══════════ -->
+<div id="contact-page" class="page hidden">
+    <div class="page-section">
+        <div class="section-header">
+            <span class="section-eyebrow">Reach Out</span>
+            <h2 class="section-title" id="contact-title">Get In Touch</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div><h4>Email</h4><p id="contact-email">medrankseo@gmail.com</p></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-user"></i></div>
+                    <div><h4>Name</h4><p id="contact-name">Maria Kanwal</p></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div><h4>Response Time</h4><p id="contact-response">Within 24 hours</p></div>
+                </div>
+                <div class="social-row">
+                    <a href="#" class="social-btn" id="social-fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn" id="social-insta"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn" id="social-twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-btn" id="social-pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-box">
+                <form onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" required placeholder="Enter subject">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="5" required placeholder="Your message..."></textarea>
+                    </div>
+                    <button type="submit" class="contact-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ ADMIN LOGIN ═══════════ -->
+<div id="admin-login-page" class="page hidden">
+    <div style="padding: 2rem;">
+        <div class="admin-login-wrap">
+            <h2>Admin Access</h2>
+            <form onsubmit="handleAdminLogin(event)">
+                <div class="field-group">
+                    <label>Email Address</label>
+                    <input type="email" id="admin-email" required placeholder="admin@email.com" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:white;width:100%;padding:0.9rem 1rem;font-family:'DM Sans',sans-serif;margin-bottom:1.3rem;">
+                </div>
+                <div class="field-group">
+                    <label>Password</label>
+                    <input type="password" id="admin-password" required placeholder="••••••••" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:white;width:100%;padding:0.9rem 1rem;font-family:'DM Sans',sans-serif;margin-bottom:1.5rem;">
+                </div>
+                <button type="submit" class="btn btn-champagne btn-full">Login to Dashboard</button>
+            </form>
+            <p id="login-hint" style="text-align:center;margin-top:1.2rem;color:rgba(255,255,255,0.4);font-size:0.8rem;cursor:pointer;" onclick="showHint()"><i class="fas fa-question-circle"></i> Need help?</p>
+            <p id="hint-text" class="hidden" style="text-align:center;margin-top:0.5rem;color:var(--champagne-light);font-size:0.8rem;font-style:italic;">Contact Maria for access credentials</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ ADMIN PANEL ═══════════ -->
+<div id="admin-panel-page" class="page hidden">
+    <div class="admin-panel-wrap">
+        <div class="admin-top">
+            <h2>Dashboard <span class="admin-badge">Admin Mode</span></h2>
+            <button class="btn btn-danger" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+        <div class="admin-layout">
+            <div class="admin-sidebar">
+                <ul class="admin-menu">
+                    <li><a href="#" class="active" onclick="showAdminTab('edit-pages',this)"><i class="fas fa-edit" style="margin-right:.5rem;width:14px;"></i> Edit Pages</a></li>
+                    <li><a href="#" onclick="showAdminTab('add-blog',this)"><i class="fas fa-plus" style="margin-right:.5rem;width:14px;"></i> Add Blog</a></li>
+                    <li><a href="#" onclick="showAdminTab('manage-blogs',this)"><i class="fas fa-list" style="margin-right:.5rem;width:14px;"></i> Manage Blogs</a></li>
+                    <li><a href="#" onclick="showAdminTab('analytics',this)"><i class="fas fa-chart-bar" style="margin-right:.5rem;width:14px;"></i> Analytics</a></li>
+                </ul>
+            </div>
+            <div class="admin-content-box">
+
+                <!-- Edit Pages -->
+                <div id="edit-pages-tab">
+                    <h3 style="font-size:1.5rem;color:var(--forest);margin-bottom:1.5rem;font-weight:400;">Edit Page Content</h3>
+
+                    <div class="admin-section-block">
+                        <h4>🏠 Home Page</h4>
+                        <div class="field-group"><label>Hero Title</label><input type="text" id="edit-home-hero-title"></div>
+                        <div class="field-group"><label>Hero Text</label><textarea id="edit-home-hero-text" rows="3"></textarea></div>
+                        <div class="field-group"><label>Featured Section Title</label><input type="text" id="edit-home-featured-title"></div>
+                        <button class="btn btn-success" onclick="saveHomeContent()">Save Home Changes</button>
+                    </div>
+
+                    <div class="admin-section-block">
+                        <h4>👤 About Page</h4>
+                        <div class="field-group"><label>Page Title / Eyebrow</label><input type="text" id="edit-about-title"></div>
+                        <div class="field-group"><label>Heading</label><input type="text" id="edit-about-subtitle"></div>
+                        <div class="field-group"><label>Image URL</label><input type="text" id="edit-about-image"></div>
+                        <div class="field-group"><label>Content (HTML allowed)</label><textarea id="edit-about-content" rows="8"></textarea></div>
+                        <div class="field-group"><label>Stat 1</label><input type="text" id="edit-stat-1"></div>
+                        <div class="field-group"><label>Stat 2</label><input type="text" id="edit-stat-2"></div>
+                        <div class="field-group"><label>Stat 3</label><input type="text" id="edit-stat-3"></div>
+                        <button class="btn btn-success" onclick="saveAboutContent()">Save About Changes</button>
+                    </div>
+
+                    <div class="admin-section-block">
+                        <h4>📝 Blogs Page</h4>
+                        <div class="field-group"><label>Page Title</label><input type="text" id="edit-blogs-title"></div>
+                        <button class="btn btn-success" onclick="saveBlogsContent()">Save Blogs Changes</button>
+                    </div>
+
+                    <div class="admin-section-block">
+                        <h4>📧 Contact Page</h4>
+                        <div class="field-group"><label>Page Title</label><input type="text" id="edit-contact-title"></div>
+                        <div class="field-group"><label>Email</label><input type="email" id="edit-contact-email"></div>
+                        <div class="field-group"><label>Name</label><input type="text" id="edit-contact-name"></div>
+                        <div class="field-group"><label>Response Time</label><input type="text" id="edit-contact-response"></div>
+                        <div class="field-group"><label>Facebook URL</label><input type="url" id="edit-social-fb"></div>
+                        <div class="field-group"><label>Instagram URL</label><input type="url" id="edit-social-insta"></div>
+                        <div class="field-group"><label>Twitter URL</label><input type="url" id="edit-social-twitter"></div>
+                        <div class="field-group"><label>Pinterest URL</label><input type="url" id="edit-social-pinterest"></div>
+                        <button class="btn btn-success" onclick="saveContactContent()">Save Contact Changes</button>
+                    </div>
+                </div>
+
+                <!-- Add Blog -->
+                <div id="add-blog-tab" class="hidden">
+                    <h3 style="font-size:1.5rem;color:var(--forest);margin-bottom:1.5rem;font-weight:400;">Create New Blog</h3>
+                    <div class="field-group"><label>Blog Title *</label><input type="text" id="new-blog-title" placeholder="Enter blog title"></div>
+                    <div class="field-group">
+                        <label>Category *</label>
+                        <select id="new-blog-category">
+                            <option value="">Select...</option>
+                            <option>Skincare</option><option>Makeup</option><option>Hair Care</option>
+                            <option>Nail Care</option><option>Wellness</option><option>DIY Beauty</option><option>General</option>
+                        </select>
+                    </div>
+                    <div class="field-group">
+                        <label>Blog Content (HTML Code) *</label>
+                        <p style="font-size:0.8rem;color:var(--mist);margin-bottom:0.5rem;">Write full HTML. Use &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt; tags.</p>
+                        <textarea id="new-blog-content" class="code-area" placeholder="<h2>Introduction</h2>&#10;<p>Your content here...</p>"></textarea>
+                    </div>
+                    <div class="field-group"><label>Excerpt (shown on card)</label><textarea id="new-blog-excerpt" rows="3" placeholder="Short description..."></textarea></div>
+                    <div class="field-group"><label>Featured Image URL</label><input type="text" id="new-blog-image" placeholder="https://..."></div>
+                    <div style="display:flex;gap:1rem;">
+                        <button class="btn btn-success btn-full" onclick="publishBlog()"><i class="fas fa-paper-plane"></i> Publish Blog</button>
+                        <button class="btn btn-outline btn-full" onclick="previewBlog()"><i class="fas fa-eye"></i> Preview</button>
+                    </div>
+                </div>
+
+                <!-- Manage Blogs -->
+                <div id="manage-blogs-tab" class="hidden">
+                    <h3 style="font-size:1.5rem;color:var(--forest);margin-bottom:1.5rem;font-weight:400;">Manage Blogs</h3>
+                    <div id="admin-blog-list"></div>
+                </div>
+
+                <!-- Analytics -->
+                <div id="analytics-tab" class="hidden">
+                    <h3 style="font-size:1.5rem;color:var(--forest);margin-bottom:1.5rem;font-weight:400;">Analytics</h3>
+                    <div class="stats-row" style="margin-bottom:2rem;">
+                        <div class="stat-box"><span class="stat-number" id="total-blogs">0</span><span class="stat-label">Total Blogs</span></div>
+                        <div class="stat-box"><span class="stat-number">2026</span><span class="stat-label">Current Year</span></div>
+                        <div class="stat-box"><span class="stat-number">100%</span><span class="stat-label">Uptime</span></div>
+                    </div>
+                    <div class="admin-section-block">
+                        <h4>Category Breakdown</h4>
+                        <div id="category-breakdown"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ EDIT MODAL ═══════════ -->
+<div class="modal-overlay" id="edit-modal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeEditModal()">✕</button>
+        <h3>Edit Blog</h3>
+        <input type="hidden" id="edit-blog-id">
+        <div class="field-group"><label>Title</label><input type="text" id="edit-blog-title"></div>
+        <div class="field-group"><label>Category</label>
+            <select id="edit-blog-category">
+                <option>Skincare</option><option>Makeup</option><option>Hair Care</option>
+                <option>Nail Care</option><option>Wellness</option><option>DIY Beauty</option><option>General</option>
+            </select>
+        </div>
+        <div class="field-group"><label>Excerpt</label><textarea id="edit-blog-excerpt" rows="3"></textarea></div>
+        <div class="field-group"><label>Image URL</label><input type="text" id="edit-blog-image"></div>
+        <div class="field-group"><label>Content (HTML)</label><textarea id="edit-blog-content" class="code-area" style="min-height:280px;"></textarea></div>
+        <div style="display:flex;gap:1rem;margin-top:1rem;">
+            <button class="btn btn-success btn-full" onclick="saveEditedBlog()">Save Changes</button>
+            <button class="btn btn-outline btn-full" onclick="closeEditModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <h3>Maria Kanwal Beauty</h3>
+            <p id="footer-text">Your trusted source for beauty tips, skincare advice, and wellness inspiration. Empowering women to feel confident and beautiful since 2026.</p>
+            <div style="display:flex;gap:0.7rem;margin-top:1.2rem;">
+                <a href="#" class="social-btn" id="footer-fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn" id="footer-insta"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn" id="footer-pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="#" onclick="showPage('about')">About Me</a>
+            <a href="#" onclick="showPage('blogs')">All Blogs</a>
+            <a href="#" onclick="showPage('contact')">Contact</a>
+            <a href="#" onclick="showPage('admin-login')">Admin Login</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fas fa-envelope" style="color:var(--champagne);margin-right:.5rem;"></i><span id="footer-email">medrankseo@gmail.com</span></p>
+            <p style="margin-top:.4rem;"><i class="fas fa-user" style="color:var(--champagne);margin-right:.5rem;"></i><span id="footer-name">Maria Kanwal</span></p>
+            <p style="margin-top:.4rem;"><i class="fas fa-calendar" style="color:var(--champagne);margin-right:.5rem;"></i>Est. 2026</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Maria Kanwal Beauty. All rights reserved.</span>
+        <span>Crafted with <i class="fas fa-heart" style="color:var(--champagne);"></i> for beauty enthusiasts</span>
+    </div>
+</footer>
+
+<script>
+// ── STATE ────────────────────────────────────────────────────────
+let isAdmin = false;
+
+// ── PAGE CONTENT DEFAULTS ────────────────────────────────────────
+const defaults = {
+    home: { heroTitle:"Discover Your Natural Beauty", heroText:"Expert beauty tips, skincare routines, and wellness advice curated by Maria Kanwal to help you look and feel your best in 2026", featuredTitle:"Featured Articles" },
+    about: { title:"About Maria Kanwal", subtitle:"Beauty Expert & Wellness Advocate", image:"https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600", content:`<p>Welcome to my beauty sanctuary! I'm Maria Kanwal, a certified beauty therapist and wellness coach with over 10 years of experience in the beauty industry.</p><p>My mission is to empower women with knowledge about skincare, makeup techniques, and holistic wellness practices. I believe that true beauty comes from within, and my goal is to help you discover and enhance your natural radiance.</p><p>Through my blog, I share evidence-based beauty tips, product reviews, DIY recipes, and lifestyle advice that have transformed the lives of thousands of women worldwide.</p>`, stat1:"10+", stat2:"500+", stat3:"50k+" },
+    blogs: { title:"Beauty Blog" },
+    contact: { title:"Get In Touch", email:"medrankseo@gmail.com", name:"Maria Kanwal", response:"Within 24 hours", socialFb:"#", socialInsta:"#", socialTwitter:"#", socialPinterest:"#" }
+};
+
+// ── HELPER: build conclusion block ───────────────────────────────
+function conclusion(html) {
+    return `<div class="conclusion-box"><h2>Conclusion</h2>${html}</div>`;
+}
+
+// ── BLOGS DATA ───────────────────────────────────────────────────
+const blogs = [
+  {
+    id:1, title:"The Ultimate Guide to Glass Skin: Korean Beauty Secrets Revealed",
+    category:"Skincare", date:"January 15, 2026",
+    excerpt:"Discover the step-by-step Korean skincare routine that will give you that coveted dewy, translucent glass skin look that has taken the beauty world by storm.",
+    image:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">Skincare</span>
+  <h1>The Ultimate Guide to Glass Skin: Korean Beauty Secrets Revealed</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> January 15, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 12 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900" class="blog-feat-img" alt="Glass Skin">
+<div class="blog-detail-body">
+<h2>What Exactly Is Glass Skin?</h2>
+<p>Glass skin has taken the beauty world by storm, promising a complexion so smooth, radiant, and luminous that it literally resembles the surface of clear glass. Originating from Korean beauty culture — widely known as K-beauty — this trend isn't about covering imperfections with heavy makeup. Instead, it's about achieving maximum hydration, even skin tone, and a natural glow from the inside out.</p>
+<p>The term was popularised around 2017 by Korean beauty influencer Ellie Choi, but the concept has been the backbone of Korean skincare philosophy for decades. Korean beauty invests more per capita in skincare research than almost any other country, and the results speak for themselves — a complexion that looks filter-perfect but is entirely real and touchable.</p>
+
+<h2>The K-Beauty Philosophy Behind the Glow</h2>
+<p>Before diving into products and steps, understand the philosophy underpinning Korean skincare. In Western beauty culture, many treat skincare as a quick two-step routine. K-beauty views skincare as a form of self-care — a daily ritual that nurtures and honours your skin over time. Prevention is prized over correction. Hydration is the ultimate goal.</p>
+<div class="highlight-box"><p>"In K-beauty, skincare is not a chore — it's a cherished daily ritual of love and intention for your skin. The journey is as rewarding as the destination."</p></div>
+
+<div class="info-box"><h3><i class="fas fa-list-ol"></i> The Complete 10-Step Korean Skincare Routine</h3><ul>
+<li><strong>Step 1 — Oil Cleanser:</strong> Dissolves makeup, sunscreen, and excess sebum</li>
+<li><strong>Step 2 — Water-Based Cleanser:</strong> Removes remaining water-based impurities</li>
+<li><strong>Step 3 — Exfoliator:</strong> Sloughs dead skin cells; use 2–3 times weekly</li>
+<li><strong>Step 4 — Toner:</strong> Restores pH balance and preps skin for absorption</li>
+<li><strong>Step 5 — Essence:</strong> Lightweight hydration that boosts cell turnover</li>
+<li><strong>Step 6 — Serum / Ampoule:</strong> Concentrated actives for specific concerns</li>
+<li><strong>Step 7 — Sheet Mask:</strong> Intensive treatment; use 2–3 times weekly</li>
+<li><strong>Step 8 — Eye Cream:</strong> Nourishes the delicate periorbital area</li>
+<li><strong>Step 9 — Moisturiser:</strong> Locks in all previous layers</li>
+<li><strong>Step 10 — SPF (AM) / Sleeping Mask (PM):</strong> Daily protection or overnight nourishment</li>
+</ul></div>
+
+<h2>Hero Ingredients That Power the Glass Skin Look</h2>
+<h3>Hyaluronic Acid — The Master Hydrator</h3>
+<p>Hyaluronic acid can hold up to 1,000 times its weight in water. As we age, natural HA levels decline, leading to dehydration and fine lines. Topical HA replenishes moisture, leaving skin visibly plumper and more elastic. Look for multiple molecular weights to ensure hydration at different skin depths.</p>
+<h3>Snail Mucin — Nature's Skin Repair Serum</h3>
+<p>Snail mucin contains glycoproteins, hyaluronic acid, glycolic acid, zinc, and copper — all working together to promote healing, reduce hyperpigmentation, improve elasticity, and deeply hydrate. It's particularly effective for acne scars and dull, uneven skin tone.</p>
+<h3>Niacinamide — The Multi-Tasker</h3>
+<p>Vitamin B3 simultaneously brightens skin, minimises pores, regulates oil, strengthens the skin barrier, and reduces inflammation. Suitable for virtually all skin types, it's a staple in any glass skin routine.</p>
+<h3>Ceramides — The Barrier Builders</h3>
+<p>Ceramides are lipid molecules that form part of our skin barrier. When compromised, skin becomes dry and reactive. Replenishing ceramides rebuilds this protective shield — the foundation of a great complexion.</p>
+
+<h2>Adapting the Routine for Your Skin Type</h2>
+<p>The 10-step routine is a framework, not a rigid prescription. For <strong>oily skin</strong>, use lightweight water-based products — niacinamide and HA serums are your best friends. For <strong>dry skin</strong>, layer multiple hydrating toners (the 7-skin method), use a rich night cream, and add a facial oil. For <strong>sensitive skin</strong>, prioritise barrier repair with ceramides and centella asiatica, and introduce one product at a time.</p>
+<div class="tip-box"><p>💡 <strong>Pro Tip:</strong> Apply products from thinnest to thickest consistency. This ensures maximum absorption and prevents products from blocking each other's penetration.</p></div>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>Consistency and patience are more powerful than any single product</li>
+<li>Layer lightweight, hydrating products sequentially for maximum absorption</li>
+<li>Never skip sunscreen — UV protection is the ultimate anti-aging tool</li>
+<li>Double cleansing is non-negotiable for a truly clean base</li>
+<li>Give your routine 4–6 weeks before evaluating results</li>
+<li>Hydration does not equal oiliness — all skin types need moisture</li>
+</ul></div>
+
+${conclusion(`<p>Glass skin is not an unattainable ideal reserved for those with perfect genetics — it is the achievable result of consistent, knowledgeable skincare practiced with patience. The Korean beauty philosophy reminds us that the way we care for our skin is also a reflection of the way we care for ourselves.</p><p>Begin with the foundational steps — double cleansing, hydrating toner, essence, moisturiser, and SPF — and build from there as your skin adapts. Remember that skin operates on a 28-day renewal cycle, so give every change at least a month before judging results. With time, dedication, and the right ingredients, that luminous, glass-like glow is entirely within your reach.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>How long does it take to achieve glass skin?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Initial improvements appear in 2–4 weeks. True glass skin takes 3–6 months of consistent care, as skin cell turnover takes 28 days.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Can oily skin types achieve glass skin?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Absolutely. Use lightweight, non-comedogenic, water-based products and focus on niacinamide to regulate sebum.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Do I need all 10 steps every single day?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>No. Sheet masks and exfoliation are 2–3x weekly. Daily essentials: cleanser, toner, essence, serum, moisturiser, SPF.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Can I achieve glass skin on a budget?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Yes! Focus on ingredient lists, not brand names. Brands like The Ordinary and CeraVe offer excellent HA and niacinamide formulations affordably.</p></div></div>
+</div>`
+  },
+  {
+    id:2, title:"10-Minute Morning Skincare Routine for the Busy Woman",
+    category:"Skincare", date:"January 20, 2026",
+    excerpt:"A quick yet powerful morning routine that fits into your hectic schedule while keeping your skin healthy, protected, and glowing all day long.",
+    image:"https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">Skincare</span>
+  <h1>10-Minute Morning Skincare Routine for the Busy Woman</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> January 20, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 10 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=900" class="blog-feat-img" alt="Morning Skincare">
+<div class="blog-detail-body">
+<h2>Why Your Morning Routine Is Non-Negotiable</h2>
+<p>We've all been there — the alarm sounds, the to-do list floods in, and skincare is the first casualty of a busy morning. But a well-executed morning routine, even just ten minutes long, sets the foundation for your skin's health throughout the entire day. While you sleep, your skin goes through a remarkable regenerative process. By morning, it's primed and ready for targeted care.</p>
+
+<div class="info-box"><h3><i class="fas fa-clock"></i> The Perfect 10-Minute Breakdown</h3><ul>
+<li><strong>Minutes 1–2:</strong> Gentle, hydrating cleanse</li>
+<li><strong>Minute 3:</strong> Vitamin C serum on slightly damp skin</li>
+<li><strong>Minute 4:</strong> Hyaluronic acid or lightweight hydrating serum</li>
+<li><strong>Minute 5:</strong> Eye cream and moisturiser</li>
+<li><strong>Minutes 6–10:</strong> Sunscreen — the most important step, never rush it</li>
+</ul></div>
+
+<h2>Step-by-Step: Every Minute Explained</h2>
+<h3>Minutes 1–2: The Gentle Cleanse</h3>
+<p>Your skin doesn't need harsh scrubbing in the morning. A gentle hydrating cleanser removes overnight buildup without stripping natural oils. Massage for 60 seconds using circular motions — this stimulates lymphatic drainage and gives a natural glow even before products. Rinse with lukewarm water (never hot) and pat dry.</p>
+<h3>Minute 3: Vitamin C Serum</h3>
+<p>As a powerful antioxidant, Vitamin C neutralises free radicals from UV and pollution before they cause oxidative damage. Apply 3–5 drops to slightly damp skin. Look for L-ascorbic acid at 10–20%. For sensitive skin, choose a gentler derivative like ascorbyl glucoside.</p>
+<h3>Minute 4: Hyaluronic Acid</h3>
+<p>Apply a few drops of HA serum while skin is still slightly tacky. It draws moisture to the surface, plumping fine lines immediately. Always apply to damp skin and follow with moisturiser to seal it in — particularly important in dry climates.</p>
+<h3>Minutes 5–6: Eye Cream and Moisturiser</h3>
+<p>Pat a rice-grain amount of eye cream around the orbital bone using your ring finger. Then apply moisturiser to seal all your serums. Even oily skin needs moisturiser — choose gel texture for oily, cream for dry.</p>
+<h3>Minutes 7–10: Sunscreen</h3>
+<p>Dermatologists agree: sunscreen is the single most effective anti-aging product available. Apply a generous quarter teaspoon to face and neck. Choose broad-spectrum SPF 30 minimum. Wait 2–3 minutes before applying makeup.</p>
+
+<h2>Smart Multi-Tasking Product Choices</h2>
+<p>Tinted SPF, moisturiser-SPF combos, and vitamin C-infused moisturisers all cut steps without sacrificing skin health. The key is choosing products formulated with evidence-backed ingredients — not just marketing claims.</p>
+<div class="tip-box"><p>💡 <strong>Hack:</strong> Lay your skincare products out in order the night before. This eliminates morning decision fatigue and shaves minutes off your routine.</p></div>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>Quality over quantity — choose multi-tasking, well-formulated products</li>
+<li>Never skip sunscreen, even on cloudy days or when working from home</li>
+<li>Apply hyaluronic acid to damp skin and seal with moisturiser</li>
+<li>Prepare products the night before to eliminate morning friction</li>
+<li>Consistency beats perfection — a basic daily routine outperforms a sporadic elaborate one</li>
+</ul></div>
+
+${conclusion(`<p>A ten-minute morning skincare routine is one of the highest-return investments you can make in your long-term skin health. It protects your freshly renewed skin from the day's UV rays, pollution, and environmental stressors — and it takes less time than scrolling through your phone after waking up.</p><p>Start with the non-negotiables — cleanser, one active serum, moisturiser, and SPF — and build from there as your routine becomes second nature. The women with the best skin in their 40s and 50s are often those who were simply consistent in their 20s and 30s. Your future self will thank you for the ten minutes you invest every morning.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Can I skip steps when extremely rushed?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>If truly rushed: never skip cleanser and sunscreen. Use a tinted SPF moisturiser to combine three steps into one in under two minutes.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Should my winter and summer products differ?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Yes. Winter: richer cleanser and heavier moisturiser. Summer: gel-based, lighter textures. Keep two seasonal editions of your routine.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>How soon will I see results?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Improved hydration is noticeable almost immediately. Visible brightness from Vitamin C appears after 4–6 weeks. Significant textural changes take 3–6 months.</p></div></div>
+</div>`
+  },
+  {
+    id:3, title:"Natural DIY Face Masks: Kitchen Recipes for Every Skin Type",
+    category:"DIY Beauty", date:"January 25, 2026",
+    excerpt:"Harness the power of your kitchen pantry with these effective, all-natural face masks tailored to your specific skin type and concerns.",
+    image:"https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">DIY Beauty</span>
+  <h1>Natural DIY Face Masks: Kitchen Recipes for Every Skin Type</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> January 25, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 11 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=900" class="blog-feat-img" alt="DIY Face Masks">
+<div class="blog-detail-body">
+<h2>The Case for Going Back to Nature</h2>
+<p>Your kitchen holds the secret to radiant skin. DIY beauty is a return to the roots of skincare — centuries before synthetic preservatives and complex compounds entered the picture. Cleopatra bathed in sour milk (lactic acid). Ancient Egyptians used honey as a wound healer and skin softener. Avocado has been pressed into beauty rituals for thousands of years. The wisdom in these traditions is backed by modern science.</p>
+
+<div class="info-box"><h3><i class="fas fa-leaf"></i> Why Natural Masks Work: The Science</h3><ul>
+<li><strong>Honey:</strong> Natural humectant with powerful antibacterial properties</li>
+<li><strong>Yogurt / Milk:</strong> Contains lactic acid for gentle exfoliation and brightening</li>
+<li><strong>Turmeric:</strong> Curcumin delivers anti-inflammatory and antioxidant benefits</li>
+<li><strong>Oatmeal:</strong> Beta-glucan soothes inflammation; saponins gently cleanse pores</li>
+<li><strong>Avocado:</strong> Rich in oleic acid and Vitamins E, C, K for deep nourishment</li>
+<li><strong>Activated Charcoal:</strong> Draws impurities and toxins from pores effectively</li>
+</ul></div>
+
+<h2>Essential Safety Rules Before You Begin</h2>
+<p><strong>Always patch test.</strong> Apply a small amount to your inner arm 24 hours before applying to your face. <strong>Use fresh ingredients.</strong> DIY masks have no preservatives — make only what you need for one session. <strong>Prep your skin first.</strong> Always apply masks to a clean face.</p>
+
+<h2>Targeted Mask Recipes by Skin Concern</h2>
+<h3>Deep-Cleansing Mask for Oily & Acne-Prone Skin</h3>
+<p>Combine: 1 tsp activated charcoal, 2 drops tea tree oil, 1 tbsp aloe vera gel, 1 tsp raw honey. Apply for 12–15 minutes, rinse thoroughly. Use twice weekly.</p>
+<h3>Intensive Moisture Mask for Dry & Dehydrated Skin</h3>
+<p>Combine: ½ ripe avocado (mashed smooth), 1 tbsp raw honey, 1 tsp cold-pressed olive oil, 2 tbsp full-fat yogurt. Apply a thick layer for 20–25 minutes. Follow with a light moisturiser.</p>
+<h3>Calming Mask for Sensitive & Reactive Skin</h3>
+<p>Combine: 2 tbsp finely ground rolled oats, 3 tbsp cooled chamomile tea, 1 tbsp raw honey. Apply gently by pressing (not rubbing). Leave 15–20 minutes, rinse with cool water.</p>
+<h3>Brightening Glow Mask for Dull Skin</h3>
+<p>Combine: ½ tsp turmeric, 1 tbsp yogurt, 1 tsp lemon juice, 1 tsp honey. Apply for maximum 10 minutes. <em>Warning: turmeric stains — wear old clothing and rinse thoroughly.</em></p>
+<h3>Anti-Aging Firming Mask for Mature Skin</h3>
+<p>Combine: 1 beaten egg white, 1 tsp honey, 1 tbsp mashed banana, drops of vitamin E oil. Apply in upward strokes. Allow 15 minutes then rinse warm then cool.</p>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>Always patch test 24 hours before applying to your face</li>
+<li>Use fresh ingredients — never store leftover DIY masks</li>
+<li>Apply to clean, slightly damp skin for maximum absorption</li>
+<li>Never exceed recommended time — more is not better</li>
+<li>Always follow with moisturiser after any mask</li>
+<li>Natural doesn't automatically mean safe for everyone — your skin is unique</li>
+</ul></div>
+
+${conclusion(`<p>DIY face masks are one of the most empowering beauty practices you can adopt — they give you complete transparency over what goes on your skin, let you customise treatments for your exact needs on any given day, and cost a fraction of their commercial counterparts. The kitchen truly is nature's pharmacy.</p><p>The key to DIY success is simplicity and mindfulness: start with one recipe at a time, patch test diligently, and pay attention to how your skin responds. With these five targeted recipes in your repertoire, you have a natural solution for every skin type, season, and concern. Go slowly, be consistent, and enjoy the ritual as much as the result.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>How long can I store leftover mask?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Never store DIY masks. They contain no preservatives and can harbour bacteria within hours. Always make exactly what you need for one application.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Are these masks safe during pregnancy?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Most are safe, but avoid essential oils. Oatmeal, honey, yogurt, and avocado masks are generally considered safe. Always consult your doctor first.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Can I mix two different recipes?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Best to avoid combining recipes — use different masks on alternating days to address different concerns without risk of unexpected reactions.</p></div></div>
+</div>`
+  },
+  {
+    id:4, title:"Science-Backed Anti-Aging Skincare: What Actually Works",
+    category:"Skincare", date:"February 1, 2026",
+    excerpt:"Cut through the marketing noise with this evidence-based guide to anti-aging skincare — discover which ingredients and habits genuinely work.",
+    image:"https://images.unsplash.com/photo-1552693673-1bf958298935?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">Skincare</span>
+  <h1>Science-Backed Anti-Aging Skincare: What Actually Works</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> February 1, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 12 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=900" class="blog-feat-img" alt="Anti-Aging">
+<div class="blog-detail-body">
+<h2>Separating Science from Marketing Hype</h2>
+<p>The global anti-aging market is worth hundreds of billions of dollars, and a significant portion is driven by clever marketing rather than clinical evidence. As someone who has spent years studying skin science, I'm here to tell you what the research actually shows. A relatively small number of ingredients have robust clinical evidence — and those evidence-backed ingredients are genuinely transformative when used correctly and consistently.</p>
+<div class="highlight-box"><p>"The most powerful anti-aging serum ever formulated is SPF 50. Nothing else in your bathroom cabinet comes close to the proven power of daily broad-spectrum sun protection."</p></div>
+
+<h2>Understanding How and Why Skin Ages</h2>
+<p><strong>Intrinsic aging</strong> is the natural biological process governed largely by genetics. From our mid-twenties, collagen production declines by approximately 1% per year. <strong>Extrinsic aging</strong> is caused by UV radiation — responsible for up to 80% of visible facial aging — along with pollution, smoking, and poor lifestyle habits. The most empowering thing: extrinsic aging is largely preventable.</p>
+
+<div class="info-box"><h3><i class="fas fa-flask"></i> The Gold Standard Anti-Aging Ingredients</h3><ul>
+<li><strong>Retinoids:</strong> Most extensively studied; stimulate collagen and cell turnover</li>
+<li><strong>Vitamin C:</strong> Potent antioxidant that protects collagen and brightens pigmentation</li>
+<li><strong>Peptides:</strong> Signal proteins that trigger collagen and elastin production</li>
+<li><strong>Niacinamide:</strong> Improves elasticity, reduces hyperpigmentation, strengthens barrier</li>
+<li><strong>Hyaluronic Acid:</strong> Plumps skin and fills fine lines through superior hydration</li>
+<li><strong>AHAs (Glycolic, Lactic):</strong> Chemical exfoliants that accelerate cell turnover</li>
+<li><strong>Broad-Spectrum SPF 50:</strong> Prevents UV damage that creates the majority of visible aging</li>
+</ul></div>
+
+<h2>Retinoids: The Most Evidence-Backed Anti-Aging Ingredient</h2>
+<p>Retinoids bind to receptors in skin cells and alter how those cells behave — increasing collagen production, accelerating cell turnover, improving elasticity, and reducing pigmentation. Start with 0.025–0.1% retinol applied two nights per week, then gradually increase frequency over 2–3 months. Temporary dryness and peeling (the "retinol uglies") are normal and subside as skin adjusts.</p>
+
+<h2>Your Complete Anti-Aging Routine</h2>
+<h3>Morning:</h3>
+<ol><li>Gentle cleanser</li><li>Vitamin C serum (10–20%)</li><li>Peptide serum</li><li>Eye cream</li><li>Ceramide moisturiser</li><li>SPF 50</li></ol>
+<h3>Evening:</h3>
+<ol><li>Double cleanse</li><li>Toner or essence</li><li>Retinol or retinal</li><li>Niacinamide serum</li><li>Rich night cream</li><li>Eye cream</li></ol>
+
+<h2>Lifestyle Factors That Are Just as Important</h2>
+<p>Sleep is when the majority of skin repair happens. Growth hormone released during deep sleep directly stimulates skin cell regeneration and collagen production. Diet high in refined sugars triggers glycation — sugar molecules attach to collagen fibres, making them rigid and prone to breaking. A diet rich in antioxidants, healthy fats, and protein supports skin resilience from within.</p>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>SPF 50 is the most evidence-backed anti-aging product available — wear it every day</li>
+<li>Retinoids have the most robust clinical evidence for genuine skin renewal</li>
+<li>Start retinol slowly — twice weekly, then build to nightly over months</li>
+<li>Anti-aging is also a lifestyle: sleep, diet, and stress management matter enormously</li>
+<li>It is never too early to start prevention and never too late to see improvement</li>
+</ul></div>
+
+${conclusion(`<p>Effective anti-aging skincare doesn't require a bathroom full of expensive products. It requires a handful of well-chosen, evidence-backed ingredients — sunscreen, a retinoid, Vitamin C, niacinamide, and peptides — applied consistently over months and years. The transformation that happens with this approach is genuine, measurable, and often profound.</p><p>Pair your topical routine with quality sleep, a diet rich in antioxidants and protein, stress management, and consistent hydration. Anti-aging is a whole-life conversation, not just a skincare aisle decision. Start where you are, use what works, and commit to the long game — because your skin is always worth the investment.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>At what age should I start anti-aging skincare?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Prevention starts in mid-twenties with sunscreen and antioxidants. Introduce retinol in late twenties. It is genuinely never too late — skin at any age responds to proper care.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Can retinol worsen wrinkles initially?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Temporary dryness can accentuate lines during adjustment. Starting low and buffering with moisturiser minimises this. The "uglies" subside within 4–8 weeks and significant improvement follows.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Are expensive anti-aging products worth it?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Not necessarily — price does not equal efficacy. What matters is concentration and stability of active ingredients. Many affordable brands offer excellent retinol, Vitamin C, and peptide formulations.</p></div></div>
+</div>`
+  },
+  {
+    id:5, title:"Effortless Everyday Makeup: The Natural Glam Tutorial",
+    category:"Makeup", date:"February 5, 2026",
+    excerpt:"Master this quick, versatile makeup look that enhances your natural features for work, school, or casual days — without looking overdone.",
+    image:"https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">Makeup</span>
+  <h1>Effortless Everyday Makeup: The Natural Glam Tutorial</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> February 5, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 9 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=900" class="blog-feat-img" alt="Natural Makeup">
+<div class="blog-detail-body">
+<h2>The Art of Looking Like You're Not Wearing Makeup</h2>
+<p>There is an art to looking polished and subtly beautiful while appearing to have made zero effort. This paradox — the "no-makeup makeup look" — is far more attainable than most people think. Natural glam is not about covering up your features — it's about enhancing what's already there to create the impression of effortless beauty: skin that looks well-rested and healthy, eyes that appear open and bright, cheeks with a natural flush.</p>
+
+<div class="info-box"><h3><i class="fas fa-shopping-bag"></i> Your Natural Glam Essentials Kit</h3><ul>
+<li><strong>Tinted moisturiser or skin tint</strong> — lightweight base that lets real skin show through</li>
+<li><strong>Creamy concealer</strong> — one to two shades lighter for brightening targeted areas</li>
+<li><strong>Cream or liquid blush</strong> — natural flush that melts into skin</li>
+<li><strong>Cream bronzer</strong> — for warmth and dimension</li>
+<li><strong>Tinted brow gel or brow pencil</strong> — defines without looking drawn on</li>
+<li><strong>Mascara</strong> — a good curler and one excellent mascara outperform most eye products</li>
+<li><strong>Lip tint or sheer lipstick</strong> — a shade close to your natural lip colour</li>
+<li><strong>Setting spray</strong> — for that dewy, fresh-skin finish</li>
+</ul></div>
+
+<h2>Step-by-Step: Building Your Natural Glam Look</h2>
+<h3>Skin Prep (2 minutes before makeup)</h3>
+<p>Great makeup begins before the makeup does. After morning skincare, give moisturiser and SPF 2–3 minutes to absorb. A hydrating primer or face mist creates a dewy, smooth canvas that makes everything applied afterward look ten times more beautiful.</p>
+<h3>Step 1: Lightweight Base</h3>
+<p>Apply skin tint or tinted moisturiser with clean fingers or a damp sponge, blending from the centre outward. Use concealer only where genuinely needed — under eyes, around the nose, on blemishes. Blend with ring finger using a pressing motion for no visible lines of demarcation.</p>
+<h3>Step 2: Blush and Bronze for Warmth</h3>
+<p>Blush takes a face from tired to awake in ten seconds. Choose a cream blush in a shade mimicking what you'd look like after a brisk walk — peach, coral, or rose. Apply to the apples of cheeks and blend upward. Cream bronzer on temples, sides of nose, and jawline adds natural dimension.</p>
+<h3>Step 3: Eyes That Wake You Up</h3>
+<p>Groom brows first — fill sparse areas with hair-like strokes, set with brow gel. Curl lashes, then apply two coats of mascara to upper lashes using a zigzag motion. A nude eyeliner in the waterline makes eyes appear larger and more awake instantly.</p>
+<h3>Step 4: Lips as the Finishing Touch</h3>
+<p>Choose a lip product close to your natural colour — a sheer berry tint, peachy gloss, or MLBB lipstick. Apply with fingertip for the most natural blurred effect. Add a clear gloss dab to the centre of the lower lip for a plumping, dimensional effect.</p>
+<h3>Step 5: Set and Perfect</h3>
+<p>Finish with a hydrating setting spray — it melds all layers together, adds fresh-skin radiance, and dramatically extends wear time. For oilier skin, dust translucent powder just on the T-zone first.</p>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>Great skin prep is 50% of great makeup — never skip your skincare</li>
+<li>Cream products look the most natural and skin-like for everyday wear</li>
+<li>Blush is the single most transformative product in a natural makeup look</li>
+<li>Less foundation and more targeted concealer gives more natural results</li>
+<li>Always check your makeup in natural light before leaving the house</li>
+<li>Setting spray turns makeup into skin — always finish with one</li>
+</ul></div>
+
+${conclusion(`<p>The natural glam look is ultimately about confidence, not perfection. When you enhance rather than conceal, you develop a much more harmonious relationship with makeup — it becomes a tool for self-expression rather than a mask to hide behind. This 15-minute tutorial gives you everything you need for a polished, effortless look that works from a Monday morning at the office to a casual weekend brunch.</p><p>Master the fundamentals — skin prep, a light base, blush, defined brows, and mascara — and you'll find that you need very little else to look genuinely beautiful every day. The best makeup is the kind that makes people look at you, not at your makeup.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>How do I adapt this for oily skin?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Use oil-free, matte products for your base. Apply mattifying primer before tinted moisturiser. Use powder blush instead of cream and finish with a mattifying setting spray.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Can I skip foundation entirely?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Absolutely encouraged! If your skin is relatively clear, skip base products and use only targeted concealer, blush, bronzer, and setting spray. The result is even more natural.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Is this look suitable for mature skin?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>This look is actually more flattering for mature skin. Cream products hydrate and don't settle into lines. Avoid heavy powder. A luminous primer, cream blush, and good mascara are the real heroes for mature skin.</p></div></div>
+</div>`
+  },
+  {
+    id:6, title:"The Complete Hair Care Guide: From Washing to Treatments",
+    category:"Hair Care", date:"February 10, 2026",
+    excerpt:"Transform your hair health with this comprehensive guide covering washing techniques, conditioning rituals, deep treatments, and daily habits for every hair type.",
+    image:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">Hair Care</span>
+  <h1>The Complete Hair Care Guide: From Washing to Treatments</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> February 10, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 11 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900" class="blog-feat-img" alt="Hair Care">
+<div class="blog-detail-body">
+<h2>Why Hair Health Starts with Understanding Your Hair</h2>
+<p>Most people care for their hair based on assumptions rather than genuine understanding of what their specific hair type, porosity, and scalp condition actually needs. Hair is composed of a protein called keratin, arranged in three layers — the medulla, cortex, and cuticle. When the cuticle is smooth, hair looks shiny and retains moisture. When it's damaged, hair becomes rough, frizzy, and prone to breakage.</p>
+
+<div class="info-box"><h3><i class="fas fa-star"></i> The Golden Rules of Hair Care</h3><ul>
+<li>Wash 2–3 times weekly maximum — daily washing strips protective natural oils</li>
+<li>Always use a sulfate-free shampoo to preserve the moisture barrier</li>
+<li>Never skip conditioner — it closes the cuticle and prevents damage</li>
+<li>Deep condition once weekly with a protein or moisture treatment</li>
+<li>Apply heat protectant before every single heated styling session</li>
+<li>Trim every 6–8 weeks to prevent split ends travelling up the shaft</li>
+<li>Sleep on silk or satin to minimise friction and breakage overnight</li>
+</ul></div>
+
+<h2>Understanding Hair Porosity — The Key Nobody Talks About</h2>
+<p><strong>Low porosity hair</strong> has tightly closed cuticles that resist moisture absorption. Use lightweight liquid-based products and apply while hair is warm. <strong>High porosity hair</strong> absorbs moisture quickly but loses it just as fast — it needs heavier products, protein treatments, and oils to seal moisture in. Test: drop a clean strand in water. Floats = low porosity. Sinks quickly = high porosity.</p>
+
+<h2>The Perfect Wash Day Routine</h2>
+<h3>Pre-Poo Treatment</h3>
+<p>Apply coconut oil, argan oil, or conditioner 30–60 minutes before washing. This creates a protective barrier that prevents the shampoo from stripping hair too aggressively. The result: dramatically softer, less stripped post-wash hair.</p>
+<h3>Detangle Dry, Never Wet</h3>
+<p>Wet hair is significantly weaker and can stretch 30% more before breaking. Detangle dry hair before showering using a wide-tooth comb, working from ends upward toward roots.</p>
+<h3>Shampoo: Focus on Scalp Only</h3>
+<p>Shampoo's primary job is to cleanse the scalp. Focus your fingertip massage entirely on the scalp — hair lengths are cleaned sufficiently by the shampoo rinsing through. Use lukewarm water and consider double shampooing for heavy buildup.</p>
+<h3>Conditioner: From Mid-Length to Ends</h3>
+<p>Apply conditioner from mid-length to ends only — never the roots. Detangle gently while in the hair. Leave for at least 3–5 minutes. Rinse with cool water to close the cuticle and maximise shine.</p>
+
+<h2>Weekly Deep Conditioning: The Transformative Treatment</h2>
+<p>Apply to clean damp hair, cover with a shower cap, and leave on 20–30 minutes with gentle heat. For damaged hair: choose protein-based treatments. For dry hair: choose moisture-rich treatments with shea butter, argan oil, and aloe vera. Alternate between protein and moisture weekly to maintain the ideal balance.</p>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>Over-washing strips natural scalp oils — less frequent washing is better</li>
+<li>Detangle dry hair before washing to prevent wet-hair breakage</li>
+<li>Focus shampoo on scalp and conditioner on the lengths only</li>
+<li>Weekly deep conditioning treatments are transformative for all hair types</li>
+<li>A heat protectant before every styling session is non-negotiable</li>
+<li>Diet affects hair as much as products — prioritise protein and iron</li>
+</ul></div>
+
+${conclusion(`<p>Healthy hair is the result of a consistent, informed approach — not expensive products or complicated routines. Understanding your hair's unique type and porosity is the most powerful shift you can make, because it allows you to choose products that genuinely work for your hair rather than fighting against its nature.</p><p>Commit to the fundamentals: appropriate washing frequency, sulfate-free products, weekly deep conditioning, and diligent heat protection. Add a silk pillowcase, regular trims, and a nutrient-rich diet, and you'll be astonished at the transformation over the coming months. Beautiful, healthy hair is not a lottery — it's the outcome of knowledge applied consistently.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>How often should I wash my hair?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Oily hair: every 2–3 days. Normal hair: 2–3x weekly. Dry/curly/coily hair: once weekly or every 10 days. Over-washing strips protective oils and can increase oiliness over time.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Does cutting hair make it grow faster?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>No — hair growth happens at the scalp. However, regular trims prevent split ends from travelling further, causing breakage that makes hair appear shorter. Trimming helps you retain length over time.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Does diet really affect hair health?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Profoundly. Iron deficiency is one of the most common causes of hair thinning and loss. Adequate protein, omega-3s, biotin, zinc, and vitamins A, C, D, E are all essential for strong, healthy hair growth.</p></div></div>
+</div>`
+  },
+  {
+    id:7, title:"Nail Care Mastery: The Road to Stronger, More Beautiful Nails",
+    category:"Nail Care", date:"February 15, 2026",
+    excerpt:"Learn how to strengthen brittle nails, treat common nail problems, and maintain beautifully healthy natural nails with expert techniques and science-backed advice.",
+    image:"https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">Nail Care</span>
+  <h1>Nail Care Mastery: The Road to Stronger, More Beautiful Nails</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> February 15, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 10 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900" class="blog-feat-img" alt="Nail Care">
+<div class="blog-detail-body">
+<h2>What Your Nails Are Telling You</h2>
+<p>Your nails are far more than a canvas for polish — they're a genuine reflection of your overall health. Brittle, thin nails often indicate iron deficiency or dehydration. Yellow nails can result from smoking, frequent dark polish use, or fungal infection. Healthy nails are firm, smooth, a translucent pinkish colour, and grow at approximately 3mm per month.</p>
+
+<div class="info-box"><h3><i class="fas fa-hand-sparkles"></i> Daily Nail Care Non-Negotiables</h3><ul>
+<li>Apply cuticle oil to nail beds every single day — morning and evening</li>
+<li>Wear rubber gloves for washing dishes and cleaning</li>
+<li>Apply hand cream after every time you wash your hands</li>
+<li>File in one direction only — sawing causes edge splitting</li>
+<li>Never use nails as tools — no scratching, prying, or peeling</li>
+<li>Always apply a base coat before nail polish to prevent staining</li>
+</ul></div>
+
+<h2>Shape, Length, and Filing Technique</h2>
+<p>Oval, almond, and squoval shapes are the strongest for natural nails — they don't have vulnerable corners that catch and break. File in one direction only, from the side edge toward the centre, using a fine-grit file (180–240 grit). Always file dry nails — wet nails are softer and far more vulnerable to damage during filing.</p>
+
+<h2>Treating Common Nail Problems</h2>
+<h3>Brittle, Breaking Nails</h3>
+<p>Apply a keratin-strengthening nail treatment as a base coat. Take biotin supplements (2500–5000mcg daily — studies show meaningful improvement). Dramatically reduce water submersion time and wear gloves for all domestic tasks.</p>
+<h3>Peeling Nails</h3>
+<p>Apply cuticle oil twice daily to the nail plate to rehydrate and restore flexibility. A ridge-filling base coat helps smooth and bind surface layers. Avoid picking at peeling edges.</p>
+<h3>Yellow Nails</h3>
+<p>Take breaks from dark polish between manicures. Use a quality base coat every time. Soak in a solution of baking soda and lemon juice in warm water for 10 minutes to gradually brighten appearance.</p>
+
+<h2>The Cuticle Rule: Push, Never Cut</h2>
+<p>Cuticles form a vital waterproof seal between skin and nail plate, protecting the nail matrix from bacteria and infection. Never cut cuticles. Instead, soften in warm water, then gently push back using a rubber-tipped pusher. Apply cuticle oil morning and evening to keep them soft and healthy.</p>
+<div class="tip-box"><p>💡 <strong>Longevity Tip:</strong> Wrap the free edge (the very tip) with each coat — base coat, colour, and top coat. This simple step dramatically reduces chipping and extends wear.</p></div>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>Never cut cuticles — only gently push them back after softening</li>
+<li>Daily cuticle oil is the single most impactful nail care habit you can build</li>
+<li>Wear gloves for domestic tasks — water and detergent are enemies of strong nails</li>
+<li>Biotin has clinical evidence for improving brittle nail strength</li>
+<li>Always use a base coat — it protects nails from staining and improves adhesion</li>
+<li>Give nails regular breaks from polish and gel to maintain their health</li>
+</ul></div>
+
+${conclusion(`<p>Beautiful, strong nails are entirely achievable without expensive salon visits or damaging acrylics. The secret lies in understanding that nail health is a daily practice, not a monthly appointment. Cuticle oil every day, gloves for wet tasks, the right filing technique, and smart nutritional choices will produce stronger, longer, more beautiful natural nails within just a few months of consistent care.</p><p>Treat your nails with the same intentional care you'd give to your skincare routine. They deserve it — and they'll reward you with the kind of healthy, polished appearance that no amount of gel or acrylic can replicate long-term. Start with the daily cuticle oil ritual and build from there. Small habits, remarkable results.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>How can I make nails grow longer without breaking?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Focus on retention. Keep nails moisturised with cuticle oil daily, wear gloves for wet tasks, take biotin, choose an oval or squoval shape, and avoid using nails as tools. Growth rate is fixed at ~3mm per month.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Are gel manicures damaging?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Frequent gel can weaken nails, primarily due to the removal process. Always have gel professionally removed — never peel. Limit to every 4–6 weeks and use strengthening treatments during breaks.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Which vitamins help nail growth?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Biotin (B7) has the strongest evidence. Also important: iron, zinc, vitamin C, vitamin D, protein, and omega-3s. Food sources: eggs, fatty fish, leafy greens, nuts, seeds, legumes.</p></div></div>
+</div>`
+  },
+  {
+    id:8, title:"Eat Your Way to Glowing Skin: The Beauty Nutrition Guide",
+    category:"Wellness", date:"February 20, 2026",
+    excerpt:"Discover how the foods you eat directly impact your skin's radiance, elasticity, and aging process — and build a beauty diet that truly transforms from within.",
+    image:"https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">Wellness</span>
+  <h1>Eat Your Way to Glowing Skin: The Beauty Nutrition Guide</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> February 20, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 11 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900" class="blog-feat-img" alt="Beauty Nutrition">
+<div class="blog-detail-body">
+<h2>The Skin-Gut Connection: Beauty Truly Is More Than Skin Deep</h2>
+<p>Modern research has decisively established that the gut-skin axis — the complex bidirectional relationship between gut health and skin condition — is one of the most significant factors in how your skin looks, feels, and ages. When the gut microbiome is imbalanced, inflammatory signals increase throughout the body, manifesting in the skin as acne, rosacea, eczema, dullness, and accelerated aging.</p>
+
+<div class="info-box"><h3><i class="fas fa-apple-alt"></i> The Top 12 Skin-Nourishing Superfoods</h3><ul>
+<li><strong>Wild salmon:</strong> Astaxanthin and omega-3s reduce inflammation and support collagen</li>
+<li><strong>Blueberries:</strong> Highest antioxidant capacity of any berry; fight UV-induced free radicals</li>
+<li><strong>Sweet potatoes:</strong> Beta-carotene converts to Vitamin A for a healthy natural glow</li>
+<li><strong>Avocado:</strong> Oleic acid and Vitamins E and C deeply hydrate and protect</li>
+<li><strong>Spinach and kale:</strong> Vitamins A, C, E, K, and iron for comprehensive skin support</li>
+<li><strong>Walnuts and almonds:</strong> Vitamin E, selenium, and omega-3s for glow and elasticity</li>
+<li><strong>Tomatoes:</strong> Lycopene provides UV photoprotection from within</li>
+<li><strong>Fermented foods:</strong> Probiotics for gut-skin axis balance and immune support</li>
+<li><strong>Green tea:</strong> Catechins reduce inflammation and provide UV protection</li>
+<li><strong>Dark chocolate (70%+):</strong> Flavonols improve skin texture and circulation</li>
+<li><strong>Bone broth:</strong> Natural collagen, glycine, and proline for skin structure</li>
+<li><strong>Water:</strong> The most underrated beauty supplement — hydration is foundational</li>
+</ul></div>
+
+<h2>The Critical Nutrients Your Skin Cannot Thrive Without</h2>
+<h3>Vitamin C — The Collagen Co-Factor</h3>
+<p>Vitamin C is literally required for collagen synthesis. Without adequate intake, the body cannot produce or maintain the collagen fibres that give skin firmness and elasticity. It also inhibits melanin production, making it a natural brightener. Top sources: red and yellow bell peppers, strawberries, kiwi, guava, and broccoli.</p>
+<h3>Omega-3 Fatty Acids — The Anti-Inflammatory Foundation</h3>
+<p>EPA and DHA found in fatty fish are among the most powerful anti-inflammatory nutrients. They reduce the systemic inflammation that drives acne, rosacea, and aging, and support the skin's lipid barrier to prevent moisture loss.</p>
+<h3>Zinc — The Acne Warrior</h3>
+<p>Zinc is involved in skin cell production, wound healing, sebum regulation, and immune function. Low zinc is strongly associated with inflammatory acne. Food sources: pumpkin seeds, chickpeas, lentils, beef, oysters, and hemp seeds.</p>
+
+<h2>Foods That Age Your Skin Prematurely</h2>
+<p><strong>Sugar and refined carbohydrates</strong> trigger glycation — sugar molecules bond with collagen, making it rigid and yellow-brown. Over time this manifests as dull, yellowed skin with reduced elasticity. <strong>Alcohol</strong> dehydrates the skin, depletes B vitamins and zinc, disrupts sleep quality, and promotes systemic inflammation.</p>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>The gut-skin axis is real — a healthy gut directly produces healthier skin</li>
+<li>Reduce refined sugar to protect collagen from glycation damage</li>
+<li>Eat the rainbow daily to ensure diverse antioxidant and vitamin intake</li>
+<li>Omega-3 fatty acids reduce the systemic inflammation that drives skin issues</li>
+<li>Hydration is foundational — aim for 2+ litres of water daily</li>
+<li>Dietary changes take 4–6 weeks to visibly reflect in your skin</li>
+</ul></div>
+
+${conclusion(`<p>The relationship between what you eat and how your skin looks is one of the most powerful and actionable levers you have in your beauty toolkit. No topical product, however well-formulated, can fully compensate for a diet chronically deficient in the nutrients your skin needs to regenerate, protect itself, and maintain its structural integrity.</p><p>Begin with the abundance approach: fill your plate with more colour, more omega-3-rich fish, more fermented foods, and far more water. Reduce the refined sugars and processed foods that systematically undermine skin health at the cellular level. Your skin is literally built from the food you eat — choose its building blocks wisely, and it will show in every reflection you encounter.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>How long before diet changes show on skin?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Skin cell turnover takes 28–40 days, so expect improvements in 4–6 weeks. Reduced puffiness from cutting sodium and alcohol can appear within days.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Is collagen supplementation worth it?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Hydrolysed collagen peptide supplements show evidence for improved skin elasticity and hydration with consistent daily use (5–10g daily for 8–12 weeks). Most effective taken alongside Vitamin C.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Does dairy cause acne?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Research shows a modest association between milk consumption and acne in some people, possibly related to hormones in milk and its effect on IGF-1. Try eliminating for 6–8 weeks and assess your skin's response.</p></div></div>
+</div>`
+  },
+  {
+    id:9, title:"Winter Skin Survival Guide: Protecting Your Complexion in Cold Weather",
+    category:"Skincare", date:"March 1, 2026",
+    excerpt:"Protect your skin from the harsh effects of winter weather with targeted routine adjustments, ingredient upgrades, and lifestyle tips for your most nourished complexion.",
+    image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">Skincare</span>
+  <h1>Winter Skin Survival Guide: Protecting Your Complexion in Cold Weather</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> March 1, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 10 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900" class="blog-feat-img" alt="Winter Skincare">
+<div class="blog-detail-body">
+<h2>Why Winter Is Your Skin's Most Challenging Season</h2>
+<p>Cold outdoor air holds dramatically less moisture than warm air — the relative humidity of cold winter air causes active trans-epidermal water loss (TEWL) from your skin. Step indoors, and central heating dries indoor air to as low as 10–20% relative humidity — comparable to desert conditions. Cold winds strip surface lipids from your skin barrier more aggressively than almost any other environmental factor. You're fighting moisture loss, barrier damage, and environmental stress simultaneously.</p>
+
+<div class="info-box"><h3><i class="fas fa-snowflake"></i> Your Winter Skincare Toolkit</h3><ul>
+<li><strong>Cream or milk cleanser</strong> — replaces any stripping gel or foaming formula</li>
+<li><strong>Hydrating toner or essence</strong> — layer multiple applications for winter depth</li>
+<li><strong>Hyaluronic acid serum</strong> — applied to damp skin under moisturiser</li>
+<li><strong>Rich ceramide moisturiser</strong> — barrier repair and moisture sealing</li>
+<li><strong>Facial oil (evening)</strong> — seals all hydrating layers beneath it</li>
+<li><strong>SPF 30+ (year-round, non-negotiable)</strong> — UV is present even in winter</li>
+<li><strong>Humidifier</strong> — run overnight to restore indoor air moisture to healthy levels</li>
+</ul></div>
+
+<h2>Product Upgrades for the Cold Season</h2>
+<h3>Switch to a Cream or Milk Cleanser</h3>
+<p>Foaming cleansers rely on surfactants that strip skin's natural lipids — already under attack from winter air. Switch to cream, balm, or milk formulas that cleanse while depositing moisturising ingredients. In the morning, many cream cleansers don't even require rinsing — a warm damp muslin cloth is sufficient.</p>
+<h3>Layer Multiple Hydrating Toners</h3>
+<p>The Korean 7-skin method applies multiple thin layers of hydrating toner pressed into skin with clean palms. In winter, even two or three layers dramatically increases skin's moisture reservoir compared to a single application.</p>
+<h3>Upgrade to a Ceramide-Rich Moisturiser</h3>
+<p>Look for formulations rich in ceramides, shea butter, squalane, and occlusives like petrolatum that seal moisture by forming a physical barrier over the skin's surface. Apply to slightly damp skin immediately after cleansing.</p>
+<h3>Add a Facial Oil as Your Final Evening Step</h3>
+<p>Argan, jojoba, rosehip, or squalane oil applied as your final evening step forms an occlusive barrier that seals all hydrating layers beneath and prevents overnight moisture evaporation. By morning, skin looks plumped, radiant, and deeply nourished.</p>
+
+<h2>Lifestyle Adjustments as Important as Your Products</h2>
+<p><strong>Run a humidifier.</strong> Maintaining bedroom humidity at 40–60% reduces TEWL dramatically — many people find this more effective than any new product. <strong>Avoid hot showers.</strong> Lower the temperature to warm, keep showers brief, and apply moisturiser immediately after while skin is still damp. <strong>Protect exposed areas</strong> — lips, hands, face, and neck all need dedicated daily care in winter.</p>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>Switch to a cream or milk cleanser to avoid stripping compromised winter skin</li>
+<li>Layer hydrating products — winter requires more moisture than any other season</li>
+<li>A bedroom humidifier may do more for winter skin than any product you buy</li>
+<li>Facial oil as a final step seals all your hydrating layers overnight</li>
+<li>Never skip sunscreen — UV rays reflect off snow and winter clouds still transmit UV</li>
+<li>Reduce exfoliation to once weekly and switch to gentler lactic acid formulas</li>
+</ul></div>
+
+${conclusion(`<p>Winter skin challenges are real, but they are entirely manageable with the right knowledge and a willingness to adapt your routine to what your skin actually needs in that season. The fundamental shift — from lightweight summer products to richer, more occlusive winter formulas — along with the simple addition of a bedroom humidifier, will produce a dramatic improvement in how your skin feels and looks throughout the colder months.</p><p>Think of seasonal skincare as responsive self-care: your skin's needs change, and meeting those changing needs is one of the most intelligent things you can do for your long-term complexion. This winter, invest in barrier repair, layer your hydration, protect every exposed area, and never — under any circumstances — skip your SPF. Your skin will thank you all the way through to spring.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Why is my skin worse in winter with the same routine?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>The same routine that works in summer isn't sufficient in winter. Environmental conditions have fundamentally changed — cold air causes greater TEWL, and heating dries indoor air further. Switch to richer formulas and add a humidifier.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Do I still need sunscreen in winter?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Absolutely. UVA rays are present 365 days a year regardless of cloud cover, and they penetrate glass. Snow and ice also reflect UV radiation, potentially intensifying exposure. Use SPF 30 minimum year-round.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>Should I exfoliate more or less in winter?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Less. Dramatically less. Winter skin is already stressed. Reduce to once weekly maximum, switch to gentle lactic acid (more hydrating than glycolic), and always follow with rich moisturiser and oil.</p></div></div>
+</div>`
+  },
+  {
+    id:10, title:"Self-Care Sunday: Create the Ultimate Luxury Spa Day at Home",
+    category:"Wellness", date:"March 10, 2026",
+    excerpt:"Transform your home into a sanctuary with this comprehensive, step-by-step self-care Sunday ritual that nurtures your body, mind, and spirit from morning to night.",
+    image:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800",
+    content:`<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header">
+  <span class="blog-detail-cat">Wellness</span>
+  <h1>Self-Care Sunday: Create the Ultimate Luxury Spa Day at Home</h1>
+  <div class="blog-meta-row"><span><i class="far fa-calendar"></i> March 10, 2026</span><span><i class="far fa-user"></i> Maria Kanwal</span><span><i class="far fa-clock"></i> 12 min read</span></div>
+</div>
+<img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900" class="blog-feat-img" alt="Self-Care Sunday">
+<div class="blog-detail-body">
+<h2>Why Self-Care Sunday Is More Than Just Pampering</h2>
+<p>Setting aside an entire day for self-care can feel indulgent in a world that celebrates busyness. But self-care Sunday is a biological necessity — it allows you to show up fully for the other six days of the week. Chronic stress elevates cortisol, which directly impairs sleep quality, depletes immune function, accelerates skin aging, triggers hair loss, and worsens inflammatory skin conditions. Taking a day to actively lower cortisol levels isn't selfish — it's strategic.</p>
+<div class="highlight-box"><p>"Self-care is not something you do when everything else is done. It is the foundation that makes everything else possible."</p></div>
+
+<div class="info-box"><h3><i class="fas fa-spa"></i> Your Complete Self-Care Sunday Schedule</h3><ul>
+<li><strong>7:00–8:00 AM:</strong> Gentle wake-up — no phone, herbal tea, journaling or meditation</li>
+<li><strong>8:00–9:00 AM:</strong> Nourishing breakfast + 20–30 min yoga or stretching</li>
+<li><strong>9:00–10:30 AM:</strong> Full skincare ritual — face mask, steam treatment, gua sha</li>
+<li><strong>10:30–11:00 AM:</strong> Body scrub treatment in the shower</li>
+<li><strong>11:00 AM–12:30 PM:</strong> Luxurious aromatherapy bath — 30–45 minute soak</li>
+<li><strong>12:30–1:30 PM:</strong> Light nourishing lunch and hydration</li>
+<li><strong>1:30–3:00 PM:</strong> At-home manicure and pedicure ritual</li>
+<li><strong>3:00–5:00 PM:</strong> Rest period — reading, napping, creative activity</li>
+<li><strong>7:00–9:30 PM:</strong> Nourishing evening meal, digital sunset, early bedtime</li>
+</ul></div>
+
+<h2>Morning Rituals That Set the Tone for the Whole Day</h2>
+<h3>Wake Slowly and Intentionally</h3>
+<p>The most significant choice on Self-Care Sunday is to not reach for your phone the moment you wake. Those first 20–30 minutes, before the digital world floods in, are neurologically some of the most valuable for setting your mental state. Your brain is still in a theta wave state — calm, creative, and receptive. Fill that window with a beautiful cup of herbal tea, a candle, and 15–20 minutes of journaling or silence.</p>
+<h3>Gentle Movement to Wake the Body</h3>
+<p>A 20–30 minute yoga or stretching routine gently awakens circulation, reduces overnight stiffness, and creates a sense of inhabiting your body with appreciation. Focus on releasing tension in the neck, shoulders, and hips, where most people hold chronic stress.</p>
+
+<h2>The Skincare Ritual: More Than a Face Mask</h2>
+<p>Create the right environment first: warm bathroom, candles lit, soft music. Lay out products in order before you begin. Move slowly and deliberately. Begin with a double cleanse, then a warm towel steam treatment for 3–5 minutes to open pores and maximise the penetration of what follows. Apply your chosen face mask, then during the wait, attend to cuticle care or hair oiling. Finish with gua sha or facial massage to stimulate lymphatic drainage and give skin a visible sculpted lift.</p>
+
+<h2>The Afternoon: Rest Without Guilt</h2>
+<p>Many people find the afternoon hardest — the pull toward productivity. Rest is not wasted time. Rest is when your body does its most critical repair and renewal. The human brain requires periods of rest to consolidate memories, process emotions, and restore executive function. Spend this time reading a physical book, napping (20 minutes is optimal), engaging in a creative activity, or simply sitting outside in natural light.</p>
+
+<div class="takeaways-box"><h3>Key Takeaways</h3><ul>
+<li>Prepare your space and supplies the evening before — friction kills rituals</li>
+<li>No phone for the first 30 minutes of your morning — protect your mind's calm state</li>
+<li>Rest without guilt — restoration is productive; it enables everything else</li>
+<li>Create atmosphere deliberately: candles, music, warmth, aromatherapy</li>
+<li>Digital sunset at 8 PM — the last two hours before sleep are too valuable for screens</li>
+<li>One truly restored day per week is more valuable than seven depleted ones</li>
+</ul></div>
+
+${conclusion(`<p>Self-Care Sunday is not a luxury reserved for those with abundant free time or money. It is a practice that, once established, becomes the cornerstone of sustainable well-being — the weekly reset that makes everything else in your life function at a higher level. Even two hours of truly intentional, screen-free, body-nourishing self-care produces measurable improvements in mood, resilience, and skin health.</p><p>Start where you are. Choose two or three rituals from this guide that resonate most deeply with you, and begin there. As the practice becomes established, you can layer in more elements. What matters most is the quality of presence you bring — the willingness to be fully, attentively present with yourself for a few hours each week. That presence, more than any product or protocol, is what makes self-care truly transformative.</p>`)}
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>What if I only have a few hours, not a full day?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Even 2–3 focused hours produce measurable benefits. Prioritise the rituals most restorative to you specifically — whether the bath, skincare ritual, journaling, or movement. Quality of presence matters more than duration.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>How do I make a spa day work on a budget?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Self-care costs almost nothing. DIY masks from kitchen ingredients, Epsom salts in the bath, a homemade sugar body scrub, and a candle from a corner shop create an experience just as genuinely restorative as expensive products.</p></div></div>
+<div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span>I feel guilty resting for a whole day — how do I overcome this?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Recognise that this guilt is cultural conditioning, not reality. Rest is not the opposite of productivity — it is its foundation. One fully restored day enables six more productive ones. Reframe rest as an investment, not an indulgence.</p></div></div>
+</div>`
+  }
+];
+
+// ── PAGE CONTENT FUNCTIONS ────────────────────────────────────────
+function loadPageContent() {
+    const s = JSON.parse(localStorage.getItem('pageContent')) || {};
+    const d = defaults;
+    setText('home-hero-title', s.home?.heroTitle || d.home.heroTitle);
+    setText('home-hero-text', s.home?.heroText || d.home.heroText);
+    setText('home-featured-title', s.home?.featuredTitle || d.home.featuredTitle);
+    setText('about-title', s.about?.title || d.about.title);
+    setText('about-subtitle', s.about?.subtitle || d.about.subtitle);
+    document.getElementById('about-image').src = s.about?.image || d.about.image;
+    document.getElementById('about-content').innerHTML = s.about?.content || d.about.content;
+    setText('stat-1', s.about?.stat1 || d.about.stat1);
+    setText('stat-2', s.about?.stat2 || d.about.stat2);
+    setText('stat-3', s.about?.stat3 || d.about.stat3);
+    setText('stat-1-hero', s.about?.stat1 || d.about.stat1);
+    setText('stat-2-hero', s.about?.stat2 || d.about.stat2);
+    setText('stat-3-hero', s.about?.stat3 || d.about.stat3);
+    setText('blogs-title', s.blogs?.title || d.blogs.title);
+    setText('contact-title', s.contact?.title || d.contact.title);
+    setText('contact-email', s.contact?.email || d.contact.email);
+    setText('contact-name', s.contact?.name || d.contact.name);
+    setText('contact-response', s.contact?.response || d.contact.response);
+    setHref('social-fb', s.contact?.socialFb || '#');
+    setHref('social-insta', s.contact?.socialInsta || '#');
+    setHref('social-twitter', s.contact?.socialTwitter || '#');
+    setHref('social-pinterest', s.contact?.socialPinterest || '#');
+    setText('footer-email', s.contact?.email || d.contact.email);
+    setText('footer-name', s.contact?.name || d.contact.name);
+    setHref('footer-fb', s.contact?.socialFb || '#');
+    setHref('footer-insta', s.contact?.socialInsta || '#');
+    setHref('footer-pinterest', s.contact?.socialPinterest || '#');
+}
+
+function setText(id, v) { const e = document.getElementById(id); if(e) e.textContent = v; }
+function setHref(id, v) { const e = document.getElementById(id); if(e) e.href = v; }
+function getVal(id) { return document.getElementById(id)?.value || ''; }
+
+function saveHomeContent() {
+    const s = JSON.parse(localStorage.getItem('pageContent')) || {};
+    s.home = { heroTitle: getVal('edit-home-hero-title'), heroText: getVal('edit-home-hero-text'), featuredTitle: getVal('edit-home-featured-title') };
+    localStorage.setItem('pageContent', JSON.stringify(s)); loadPageContent(); alert('Home saved!');
+}
+function saveAboutContent() {
+    const s = JSON.parse(localStorage.getItem('pageContent')) || {};
+    s.about = { title: getVal('edit-about-title'), subtitle: getVal('edit-about-subtitle'), image: getVal('edit-about-image'), content: getVal('edit-about-content'), stat1: getVal('edit-stat-1'), stat2: getVal('edit-stat-2'), stat3: getVal('edit-stat-3') };
+    localStorage.setItem('pageContent', JSON.stringify(s)); loadPageContent(); alert('About saved!');
+}
+function saveBlogsContent() {
+    const s = JSON.parse(localStorage.getItem('pageContent')) || {};
+    s.blogs = { title: getVal('edit-blogs-title') };
+    localStorage.setItem('pageContent', JSON.stringify(s)); loadPageContent(); alert('Blogs saved!');
+}
+function saveContactContent() {
+    const s = JSON.parse(localStorage.getItem('pageContent')) || {};
+    s.contact = { title: getVal('edit-contact-title'), email: getVal('edit-contact-email'), name: getVal('edit-contact-name'), response: getVal('edit-contact-response'), socialFb: getVal('edit-social-fb'), socialInsta: getVal('edit-social-insta'), socialTwitter: getVal('edit-social-twitter'), socialPinterest: getVal('edit-social-pinterest') };
+    localStorage.setItem('pageContent', JSON.stringify(s)); loadPageContent(); alert('Contact saved!');
+}
+
+function populateEditFields() {
+    const s = JSON.parse(localStorage.getItem('pageContent')) || {};
+    const d = defaults;
+    const fields = [
+        ['edit-home-hero-title', s.home?.heroTitle || d.home.heroTitle],
+        ['edit-home-hero-text', s.home?.heroText || d.home.heroText],
+        ['edit-home-featured-title', s.home?.featuredTitle || d.home.featuredTitle],
+        ['edit-about-title', s.about?.title || d.about.title],
+        ['edit-about-subtitle', s.about?.subtitle || d.about.subtitle],
+        ['edit-about-image', s.about?.image || d.about.image],
+        ['edit-about-content', s.about?.content || d.about.content],
+        ['edit-stat-1', s.about?.stat1 || d.about.stat1],
+        ['edit-stat-2', s.about?.stat2 || d.about.stat2],
+        ['edit-stat-3', s.about?.stat3 || d.about.stat3],
+        ['edit-blogs-title', s.blogs?.title || d.blogs.title],
+        ['edit-contact-title', s.contact?.title || d.contact.title],
+        ['edit-contact-email', s.contact?.email || d.contact.email],
+        ['edit-contact-name', s.contact?.name || d.contact.name],
+        ['edit-contact-response', s.contact?.response || d.contact.response],
+        ['edit-social-fb', s.contact?.socialFb || '#'],
+        ['edit-social-insta', s.contact?.socialInsta || '#'],
+        ['edit-social-twitter', s.contact?.socialTwitter || '#'],
+        ['edit-social-pinterest', s.contact?.socialPinterest || '#'],
+    ];
+    fields.forEach(([id, val]) => { const el = document.getElementById(id); if(el) el.value = val; });
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────────
+function showPage(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+    const map = { home:'home-page', about:'about-page', blogs:'blogs-page', contact:'contact-page', 'admin-login':'admin-login-page', 'admin-panel':'admin-panel-page', 'blog-detail':'blog-detail-page' };
+    const el = document.getElementById(map[page]);
+    if (el) { el.classList.remove('hidden'); el.classList.add('fade-in'); window.scrollTo(0,0); }
+    if (page === 'blogs') renderBlogs();
+}
+
+function goBackToBlogs() { showPage('blogs'); }
+
+// ── RENDER BLOGS ──────────────────────────────────────────────────
+function renderBlogs() {
+    const feat = document.getElementById('featured-blogs');
+    const all = document.getElementById('all-blogs');
+    if (feat) feat.innerHTML = blogs.slice(0,3).map(createCard).join('');
+    if (all) all.innerHTML = blogs.map(createCard).join('');
+}
+
+function createCard(b) {
+    const editBtn = isAdmin ? `<button class="edit-card-btn" onclick="event.stopPropagation();openEditModal(${b.id})"><i class="fas fa-pen"></i> Edit</button>` : '';
+    return `<article class="blog-card" onclick="viewBlog(${b.id})">
+  <div class="blog-card-img">
+    <img src="${b.image}" alt="${b.title}" onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600'">
+    <span class="blog-card-category">${b.category}</span>
+    ${editBtn}
+  </div>
+  <div class="blog-card-body">
+    <div class="blog-card-date"><i class="far fa-calendar"></i> ${b.date}</div>
+    <h3 class="blog-card-title">${b.title}</h3>
+    <p class="blog-card-excerpt">${b.excerpt}</p>
+    <a class="blog-card-link" onclick="event.stopPropagation();viewBlog(${b.id})">Read Article <i class="fas fa-arrow-right"></i></a>
+  </div>
+</article>`;
+}
+
+function viewBlog(id) {
+    const b = blogs.find(x => x.id == id);
+    if (!b) return;
+    document.getElementById('blog-content').innerHTML = b.content;
+    showPage('blog-detail');
+}
+
+function toggleFaq(el) {
+    const item = el.parentElement;
+    const was = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!was) item.classList.add('active');
+}
+
+// ── ADMIN ─────────────────────────────────────────────────────────
+function showHint() { document.getElementById('hint-text').classList.toggle('hidden'); }
+
+function handleAdminLogin(e) {
+    e.preventDefault();
+    const em = document.getElementById('admin-email').value;
+    const pw = document.getElementById('admin-password').value;
+    if (em === 'medrankseo@gmail.com' && pw === 'admin123') {
+        isAdmin = true;
+        document.body.classList.add('admin-mode');
+        document.getElementById('admin-email').value = '';
+        document.getElementById('admin-password').value = '';
+        populateEditFields();
+        showPage('admin-panel');
+        loadAdminBlogList();
+    } else {
+        alert('Invalid credentials. Please try again.');
+        document.getElementById('admin-password').value = '';
+    }
+}
+
+function handleLogout() {
+    isAdmin = false;
+    document.body.classList.remove('admin-mode');
+    showPage('home');
+    renderBlogs();
+}
+
+function showAdminTab(tab, link) {
+    ['edit-pages','add-blog','manage-blogs','analytics'].forEach(t => {
+        document.getElementById(t+'-tab').classList.add('hidden');
+    });
+    document.getElementById(tab+'-tab').classList.remove('hidden');
+    document.querySelectorAll('.admin-menu a').forEach(a => a.classList.remove('active'));
+    if (link) link.classList.add('active');
+    if (tab === 'manage-blogs') loadAdminBlogList();
+    if (tab === 'analytics') updateAdminStats();
+    if (tab === 'edit-pages') populateEditFields();
+    return false;
+}
+
+function publishBlog() {
+    const title = getVal('new-blog-title').trim();
+    const cat = getVal('new-blog-category');
+    const content = getVal('new-blog-content').trim();
+    const excerpt = getVal('new-blog-excerpt').trim();
+    const image = getVal('new-blog-image').trim();
+    if (!title || !content) { alert('Title and content are required.'); return; }
+    const nb = {
+        id: Date.now(), title, category: cat || 'General',
+        date: new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}),
+        excerpt: excerpt || title.substring(0,120)+'...',
+        image: image || 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600',
+        content: `<a class="back-btn" onclick="goBackToBlogs()"><i class="fas fa-arrow-left"></i> Back to Blogs</a>
+<div class="blog-detail-header"><h1>${title}</h1>
+<div class="blog-meta-row"><span><i class="far fa-calendar"></i> ${new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</span><span><i class="far fa-user"></i> Maria Kanwal</span></div></div>
+${image?`<img src="${image}" alt="${title}" class="blog-feat-img">`:''}
+<div class="blog-detail-body">${content}</div>`
+    };
+    blogs.push(nb);
+    ['new-blog-title','new-blog-category','new-blog-content','new-blog-excerpt','new-blog-image'].forEach(id => { document.getElementById(id).value = ''; });
+    updateAdminStats(); renderBlogs();
+    alert('Blog published successfully!');
+}
+
+function previewBlog() {
+    const title = getVal('new-blog-title') || 'Preview';
+    const content = getVal('new-blog-content');
+    const image = getVal('new-blog-image');
+    document.getElementById('blog-content').innerHTML = `
+<a class="back-btn" onclick="showPage('admin-panel')"><i class="fas fa-arrow-left"></i> Back to Admin</a>
+<div class="blog-detail-header"><h1>${title}</h1></div>
+${image?`<img src="${image}" class="blog-feat-img" alt="${title}">`:''}
+<div class="blog-detail-body">${content}</div>`;
+    showPage('blog-detail');
+}
+
+function loadAdminBlogList() {
+    document.getElementById('admin-blog-list').innerHTML = blogs.map(b => `
+<div class="admin-blog-item">
+  <div><strong>${b.title}</strong><br><small>${b.date} · ${b.category}</small></div>
+  <div class="btn-row">
+    <button class="btn btn-champagne" onclick="openEditModal(${b.id})"><i class="fas fa-edit"></i> Edit</button>
+    <button class="btn btn-forest" onclick="viewBlog(${b.id})"><i class="fas fa-eye"></i> View</button>
+    <button class="btn btn-danger" onclick="deleteBlog(${b.id})"><i class="fas fa-trash"></i></button>
+  </div>
+</div>`).join('');
+}
+
+function deleteBlog(id) {
+    if (!confirm('Delete this blog permanently?')) return;
+    const i = blogs.findIndex(b => b.id == id);
+    if (i > -1) { blogs.splice(i,1); loadAdminBlogList(); updateAdminStats(); renderBlogs(); }
+}
+
+function openEditModal(id) {
+    const b = blogs.find(x => x.id == id);
+    if (!b) return;
+    document.getElementById('edit-blog-id').value = b.id;
+    document.getElementById('edit-blog-title').value = b.title;
+    document.getElementById('edit-blog-category').value = b.category;
+    document.getElementById('edit-blog-excerpt').value = b.excerpt;
+    document.getElementById('edit-blog-image').value = b.image;
+    document.getElementById('edit-blog-content').value = b.content;
+    document.getElementById('edit-modal').classList.add('active');
+}
+
+function closeEditModal() { document.getElementById('edit-modal').classList.remove('active'); }
+
+function saveEditedBlog() {
+    const id = document.getElementById('edit-blog-id').value;
+    const b = blogs.find(x => x.id == id);
+    if (!b) return;
+    b.title = getVal('edit-blog-title');
+    b.category = getVal('edit-blog-category');
+    b.excerpt = getVal('edit-blog-excerpt');
+    b.image = getVal('edit-blog-image');
+    b.content = getVal('edit-blog-content');
+    closeEditModal(); loadAdminBlogList(); renderBlogs();
+    alert('Blog updated successfully!');
+}
+
+function updateAdminStats() {
+    const el = document.getElementById('total-blogs');
+    if (el) el.textContent = blogs.length;
+    const cb = document.getElementById('category-breakdown');
+    if (!cb) return;
+    const cats = {};
+    blogs.forEach(b => { cats[b.category] = (cats[b.category]||0)+1; });
+    cb.innerHTML = Object.entries(cats).map(([c,n]) =>
+        `<div style="display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--cream);"><span>${c}</span><strong style="color:var(--champagne)">${n} article${n>1?'s':''}</strong></div>`
+    ).join('');
+}
+
+function handleContactSubmit(e) {
+    e.preventDefault();
+    alert('Thank you! Maria will respond within 24 hours.');
+    e.target.reset();
+}
+
+// ── INIT ──────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    loadPageContent();
+    renderBlogs();
+    updateAdminStats();
+    document.getElementById('edit-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeEditModal();
+    });
+});
+</script>
+</body>
+</html>
