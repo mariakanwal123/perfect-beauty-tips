@@ -102,7 +102,9 @@ nav{background:var(--forest);position:sticky;top:0;z-index:1000;border-bottom:3p
 .author-section{background:var(--forest);padding:5rem 1.5rem}
 .author-inner{max-width:1280px;margin:0 auto}
 .author-header-row{display:flex;align-items:flex-start;gap:2.5rem;margin-bottom:3rem;flex-wrap:wrap}
-.author-avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--champagne);flex-shrink:0}
+.author-avatar-wrap{flex-shrink:0}
+.author-avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--champagne);display:block}
+.author-avatar-initials{width:120px;height:120px;border-radius:50%;border:3px solid var(--champagne);background:linear-gradient(135deg,var(--champagne) 0%,var(--forest) 100%);align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;color:white;letter-spacing:.05em}
 .author-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;color:var(--champagne-light);margin-bottom:.5rem}
 .author-intro .tagline{color:rgba(255,255,255,.7);font-size:.92rem;margin-bottom:.8rem}
 .author-contact-quick{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.8rem}
@@ -334,6 +336,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
   .stats-row{grid-template-columns:1fr 1fr 1fr}
   .blog-meta-row{flex-direction:column;gap:.4rem;align-items:center}
   .author-header-row{flex-direction:column;align-items:center;text-align:center}
+  .author-avatar-wrap{margin:0 auto}
   .author-avatar{margin:0 auto}
   .author-contact-quick{justify-content:center}
   .sites-grid,.apps-grid,.profiles-grid{grid-template-columns:1fr}
@@ -473,7 +476,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
   <div class="page-section">
     <div class="about-grid">
       <div class="about-image-wrap">
-        <img id="about-image" src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600" alt="Maria Kanwal">
+        <img id="about-image" src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600" alt="Maria Kanwal" onerror="this.src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600'">
         <div class="about-label">Maria Kanwal</div>
       </div>
       <div class="about-text">
@@ -502,7 +505,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
   <div class="author-section">
     <div class="author-inner">
       <div class="author-header-row">
-        <img src="/mnt/user-data/uploads/WhatsApp_Image_20260225_at_3_17_10_PM.jpeg" alt="Maria Kanwal" class="author-avatar">
+        <div class="author-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300" alt="Maria Kanwal" class="author-avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="author-avatar-initials" style="display:none">MK</div>
+        </div>
         <div class="author-intro">
           <h2>Maria Kanwal</h2>
           <p class="tagline">Research Associate · Assistant Digital Editor · SEO Content Writer · Scholar · Animal Welfare Supporter</p>
