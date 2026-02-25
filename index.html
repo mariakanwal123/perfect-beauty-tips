@@ -84,11 +84,17 @@ nav{background:var(--forest);position:sticky;top:0;z-index:1000;border-bottom:3p
 .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:var(--forest);position:relative;display:inline-block}
 .section-title::after{content:'';display:block;width:60px;height:2px;background:var(--champagne);margin:1rem auto 0}
 
-/* ── ABOUT ── */
-.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center}
-.about-image-wrap{position:relative}
-.about-image-wrap::before{content:'';position:absolute;top:-16px;left:-16px;right:16px;bottom:16px;border:2px solid var(--champagne);z-index:0}
-.about-image-wrap img{position:relative;z-index:1;width:100%;height:460px;object-fit:cover;display:block}
+/* ── ADMIN EDIT BUTTON (visible only in admin mode) ── */
+.admin-only-btn{display:none;align-items:center;gap:.4rem;background:var(--champagne);color:var(--forest);border:none;padding:.4rem 1rem;font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;flex-shrink:0}
+.admin-only-btn:hover{background:var(--champagne-light);transform:translateY(-1px)}
+.admin-mode .admin-only-btn{display:inline-flex}
+
+/* ── ABOUT TEXT ONLY (no image) ── */
+.about-text-only{max-width:800px}
+.about-text-only .about-eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champagne);display:block}
+.about-text-only .about-heading{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;color:var(--forest);line-height:1.2}
+.about-text-only p{color:var(--bark);font-size:.98rem;margin-bottom:1.2rem;line-height:1.9}
+
 .about-label{position:absolute;bottom:-16px;right:-16px;z-index:2;background:var(--forest);color:var(--champagne-light);padding:1rem 1.2rem;font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic}
 .about-eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--champagne);display:block;margin-bottom:1rem}
 .about-heading{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;color:var(--forest);margin-bottom:1.5rem;line-height:1.2}
@@ -102,9 +108,7 @@ nav{background:var(--forest);position:sticky;top:0;z-index:1000;border-bottom:3p
 .author-section{background:var(--forest);padding:5rem 1.5rem}
 .author-inner{max-width:1280px;margin:0 auto}
 .author-header-row{display:flex;align-items:flex-start;gap:2.5rem;margin-bottom:3rem;flex-wrap:wrap}
-.author-avatar-wrap{flex-shrink:0}
-.author-avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--champagne);display:block}
-.author-avatar-initials{width:120px;height:120px;border-radius:50%;border:3px solid var(--champagne);background:linear-gradient(135deg,var(--champagne) 0%,var(--forest) 100%);align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;color:white;letter-spacing:.05em}
+
 .author-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;color:var(--champagne-light);margin-bottom:.5rem}
 .author-intro .tagline{color:rgba(255,255,255,.7);font-size:.92rem;margin-bottom:.8rem}
 .author-contact-quick{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.8rem}
@@ -321,9 +325,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
   .hero{min-height:auto}
   .hero-stats{flex-direction:row;flex-wrap:wrap;gap:1rem}
   .hero-stat-card{flex:1;min-width:140px}
-  .about-grid{grid-template-columns:1fr}
-  .about-image-wrap::before{display:none}
-  .about-image-wrap img{height:300px}
+
   .about-label{bottom:0;right:0}
   .contact-grid{grid-template-columns:1fr}
 }
@@ -336,8 +338,7 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
   .stats-row{grid-template-columns:1fr 1fr 1fr}
   .blog-meta-row{flex-direction:column;gap:.4rem;align-items:center}
   .author-header-row{flex-direction:column;align-items:center;text-align:center}
-  .author-avatar-wrap{margin:0 auto}
-  .author-avatar{margin:0 auto}
+
   .author-contact-quick{justify-content:center}
   .sites-grid,.apps-grid,.profiles-grid{grid-template-columns:1fr}
   .contact-form-box{padding:1.8rem 1.2rem}
@@ -474,27 +475,26 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
 <!-- ═══════════ ABOUT PAGE ═══════════ -->
 <div id="about-page" class="page hidden">
   <div class="page-section">
-    <div class="about-grid">
-      <div class="about-image-wrap">
-        <img id="about-image" src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600" alt="Maria Kanwal" onerror="this.src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600'">
-        <div class="about-label">Maria Kanwal</div>
+    <div class="about-text-only">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+        <div>
+          <span class="about-eyebrow" id="about-title">About Maria Kanwal</span>
+          <h2 class="about-heading" id="about-subtitle">Beauty Expert & Wellness Advocate</h2>
+        </div>
+        <button class="admin-only-btn" onclick="showPage('admin-panel');setTimeout(()=>{showAdminTab('edit-pages',null);},150)" title="Edit About Page"><i class="fas fa-pen"></i> Edit</button>
       </div>
-      <div class="about-text">
-        <span class="about-eyebrow" id="about-title">About Maria Kanwal</span>
-        <h2 class="about-heading" id="about-subtitle">Beauty Expert & Wellness Advocate</h2>
-        <div id="about-content">
-          <p>Welcome to my beauty sanctuary! I'm Maria Kanwal, a certified beauty therapist and wellness coach with over 10 years of experience in the beauty industry.</p>
-          <p>My mission is to empower women with knowledge about skincare, makeup techniques, and holistic wellness practices. I believe that true beauty comes from within, and my goal is to help you discover and enhance your natural radiance.</p>
-          <p>Through my blog, I share evidence-based beauty tips, product reviews, DIY recipes, and lifestyle advice that have transformed the lives of thousands of women worldwide.</p>
-        </div>
-        <div class="stats-row">
-          <div class="stat-box"><span class="stat-number" id="stat-1">10+</span><span class="stat-label">Years Experience</span></div>
-          <div class="stat-box"><span class="stat-number" id="stat-2">500+</span><span class="stat-label">Articles Published</span></div>
-          <div class="stat-box"><span class="stat-number" id="stat-3">50k+</span><span class="stat-label">Happy Readers</span></div>
-        </div>
-        <div style="margin-top:1.5rem">
-          <a href="#" onclick="showPage('author')" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--forest);color:var(--champagne-light);padding:.75rem 1.5rem;text-decoration:none;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:all .2s" onmouseover="this.style.background='var(--forest-light)'" onmouseout="this.style.background='var(--forest)'"><i class="fas fa-pen-nib"></i> View Full Author Profile</a>
-        </div>
+      <div id="about-content">
+        <p>Welcome to my beauty sanctuary! I'm Maria Kanwal, a certified beauty therapist and wellness coach with over 10 years of experience in the beauty industry.</p>
+        <p>My mission is to empower women with knowledge about skincare, makeup techniques, and holistic wellness practices. I believe that true beauty comes from within, and my goal is to help you discover and enhance your natural radiance.</p>
+        <p>Through my blog, I share evidence-based beauty tips, product reviews, DIY recipes, and lifestyle advice that have transformed the lives of thousands of women worldwide.</p>
+      </div>
+      <div class="stats-row" style="max-width:500px;margin-top:2rem">
+        <div class="stat-box"><span class="stat-number" id="stat-1">10+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-box"><span class="stat-number" id="stat-2">500+</span><span class="stat-label">Articles Published</span></div>
+        <div class="stat-box"><span class="stat-number" id="stat-3">50k+</span><span class="stat-label">Happy Readers</span></div>
+      </div>
+      <div style="margin-top:1.5rem">
+        <a href="#" onclick="showPage('author')" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--forest);color:var(--champagne-light);padding:.75rem 1.5rem;text-decoration:none;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:all .2s" onmouseover="this.style.background='var(--forest-light)'" onmouseout="this.style.background='var(--forest)'"><i class="fas fa-pen-nib"></i> View Full Author Profile</a>
       </div>
     </div>
   </div>
@@ -505,10 +505,6 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
   <div class="author-section">
     <div class="author-inner">
       <div class="author-header-row">
-        <div class="author-avatar-wrap">
-          <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300" alt="Maria Kanwal" class="author-avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="author-avatar-initials" style="display:none">MK</div>
-        </div>
         <div class="author-intro">
           <h2>Maria Kanwal</h2>
           <p class="tagline">Research Associate · Assistant Digital Editor · SEO Content Writer · Scholar · Animal Welfare Supporter</p>
@@ -530,6 +526,9 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
 
       <!-- About Tab -->
       <div class="author-tab-content active" id="tab-about">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:1rem">
+          <button class="admin-only-btn" onclick="showPage('admin-panel');setTimeout(()=>{showAdminTab('edit-pages',null);},150)"><i class="fas fa-pen"></i> Edit About</button>
+        </div>
         <div style="color:rgba(255,255,255,.8);font-size:.97rem;line-height:1.9;max-width:860px">
           <p>I am Maria Kanwal, a Research Associate, Assistant Digital Editor, Digital Marketing and Web Content Writer, SEO Content Writer, Copywriter, and Scholar. I worked as a Research Associate at Probyn Security Advisors, as a Research Assistant at Tech Harbor, and as a Research Associate and Assistant Digital Editor at Matrix Global and Nichetech Digital.</p>
           <p>I have developed a solid foundation in Content Creation, Editing, and Designing, Website and Social Media Content, News Writing, Event and Zoom Meeting Coordination, and Creation and Coordination of University Certification Courses.</p>
@@ -541,7 +540,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
 
       <!-- Websites Tab -->
       <div class="author-tab-content" id="tab-websites">
-        <p style="color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:1.5rem">Click on any website to open it in a new tab.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;margin-bottom:1.5rem">
+          <p style="color:rgba(255,255,255,.6);font-size:.88rem;margin:0">Click on any website to open it in a new tab.</p>
+          <button class="admin-only-btn" onclick="openAuthorEditModal('websites')"><i class="fas fa-pen"></i> Edit Websites</button>
+        </div>
         <div class="sites-grid">
           <a href="https://womenhub.sbs/" target="_blank" class="site-card">
             <h4><i class="fas fa-globe" style="color:var(--champagne);margin-right:.4rem"></i>WomenHub</h4>
@@ -598,7 +600,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
 
       <!-- Publications Tab -->
       <div class="author-tab-content" id="tab-publications">
-        <p style="color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:1.5rem">Books, research papers, and academic publications by Maria Kanwal.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;margin-bottom:1.5rem">
+          <p style="color:rgba(255,255,255,.6);font-size:.88rem;margin:0">Books, research papers, and academic publications by Maria Kanwal.</p>
+          <button class="admin-only-btn" onclick="openAuthorEditModal('publications')"><i class="fas fa-pen"></i> Edit Publications</button>
+        </div>
         
         <h3 style="font-family:'Cormorant Garamond',serif;color:var(--champagne-light);font-size:1.5rem;margin-bottom:1.2rem;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:.5rem">📚 Books</h3>
         <div class="pub-list">
@@ -681,7 +686,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
 
       <!-- Apps Tab -->
       <div class="author-tab-content" id="tab-apps">
-        <p style="color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:1.5rem">Interactive web applications developed by Maria Kanwal. Click to open.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;margin-bottom:1.5rem">
+          <p style="color:rgba(255,255,255,.6);font-size:.88rem;margin:0">Interactive web applications developed by Maria Kanwal. Click to open.</p>
+          <button class="admin-only-btn" onclick="openAuthorEditModal('apps')"><i class="fas fa-pen"></i> Edit Apps</button>
+        </div>
         <div class="apps-grid">
           <a href="https://mariakanwal123.github.io/ramadan-calendar-2026/" target="_blank" class="app-card">
             <div class="app-icon">🌙</div>
@@ -703,7 +711,10 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
 
       <!-- Academic Profiles Tab -->
       <div class="author-tab-content" id="tab-profiles">
-        <p style="color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:1.5rem">Find Maria Kanwal on academic and professional platforms.</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;margin-bottom:1.5rem">
+          <p style="color:rgba(255,255,255,.6);font-size:.88rem;margin:0">Find Maria Kanwal on academic and professional platforms.</p>
+          <button class="admin-only-btn" onclick="openAuthorEditModal('profiles')"><i class="fas fa-pen"></i> Edit Profiles</button>
+        </div>
         <div class="profiles-grid">
           <a href="https://www.linkedin.com/in/maria-kanwal-637629207/" target="_blank" class="profile-card">
             <i class="fab fa-linkedin"></i>
@@ -996,6 +1007,19 @@ footer{background:var(--charcoal);color:rgba(255,255,255,.7);padding:4rem 1.5rem
     <div style="display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap">
       <button class="btn btn-success btn-full" onclick="saveEditedBlog()">Save Changes</button>
       <button class="btn btn-outline btn-full" onclick="closeEditModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ AUTHOR EDIT MODAL ═══════════ -->
+<div class="modal-overlay" id="author-edit-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeAuthorEditModal()">✕</button>
+    <h3 id="author-modal-title">Edit Section</h3>
+    <div id="author-modal-body"></div>
+    <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap">
+      <button class="btn btn-success btn-full" onclick="saveAuthorEdit()"><i class="fas fa-save"></i> Save Changes</button>
+      <button class="btn btn-outline btn-full" onclick="closeAuthorEditModal()">Cancel</button>
     </div>
   </div>
 </div>
@@ -1427,6 +1451,160 @@ function handleContactSubmit(e){
   e.target.reset();
 }
 
+// ── AUTHOR EDIT MODAL ─────────────────────────────────────────────
+let currentAuthorSection = '';
+
+function openAuthorEditModal(section){
+  if(!isAdmin) return;
+  currentAuthorSection = section;
+  const modal = document.getElementById('author-edit-modal');
+  const title = document.getElementById('author-modal-title');
+  const body = document.getElementById('author-modal-body');
+  let s = {};
+  try{ s = JSON.parse(localStorage.getItem('mk_authorContent')) || {}; } catch(e){}
+
+  const labels = {websites:'Edit My Websites',publications:'Edit Publications',apps:'Edit Apps',profiles:'Edit Academic Profiles'};
+  title.textContent = labels[section] || 'Edit Section';
+
+  if(section==='websites'){
+    body.innerHTML = `
+      <p style="font-size:.82rem;color:var(--mist);margin-bottom:1rem">Edit the websites list. Format each line as: <code style="background:var(--ivory);padding:.1rem .4rem">Name | URL | Description</code></p>
+      <div class="field-group"><label>Websites (one per line)</label>
+      <textarea id="ae-websites" class="code-area" style="min-height:280px">${(s.websites||getDefaultWebsitesText())}</textarea></div>`;
+  } else if(section==='publications'){
+    body.innerHTML = `
+      <p style="font-size:.82rem;color:var(--mist);margin-bottom:1rem">Edit publications. Format: <code style="background:var(--ivory);padding:.1rem .4rem">Title | Type | ISBN or URL | Link text</code></p>
+      <div class="field-group"><label>Publications (one per line)</label>
+      <textarea id="ae-publications" class="code-area" style="min-height:320px">${(s.publications||getDefaultPublicationsText())}</textarea></div>`;
+  } else if(section==='apps'){
+    body.innerHTML = `
+      <p style="font-size:.82rem;color:var(--mist);margin-bottom:1rem">Edit apps. Format: <code style="background:var(--ivory);padding:.1rem .4rem">Name | URL | Icon emoji | Description</code></p>
+      <div class="field-group"><label>Apps (one per line)</label>
+      <textarea id="ae-apps" class="code-area" style="min-height:200px">${(s.apps||getDefaultAppsText())}</textarea></div>`;
+  } else if(section==='profiles'){
+    body.innerHTML = `
+      <p style="font-size:.82rem;color:var(--mist);margin-bottom:1rem">Edit profiles. Format: <code style="background:var(--ivory);padding:.1rem .4rem">Name | URL | Icon class | Description</code></p>
+      <div class="field-group"><label>Profiles (one per line)</label>
+      <textarea id="ae-profiles" class="code-area" style="min-height:240px">${(s.profiles||getDefaultProfilesText())}</textarea></div>`;
+  }
+  modal.classList.add('active');
+}
+
+function closeAuthorEditModal(){
+  document.getElementById('author-edit-modal').classList.remove('active');
+}
+
+function saveAuthorEdit(){
+  let s = {};
+  try{ s = JSON.parse(localStorage.getItem('mk_authorContent')) || {}; } catch(e){}
+  const sec = currentAuthorSection;
+  const fieldMap = {websites:'ae-websites',publications:'ae-publications',apps:'ae-apps',profiles:'ae-profiles'};
+  const el = document.getElementById(fieldMap[sec]);
+  if(el){ s[sec] = el.value; }
+  try{ localStorage.setItem('mk_authorContent',JSON.stringify(s)); } catch(e){}
+  closeAuthorEditModal();
+  renderAuthorTab(sec);
+  showMsg('Changes saved successfully!');
+}
+
+function showMsg(msg){
+  const el = document.getElementById('admin-save-msg');
+  if(el){el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),3000)}
+}
+
+function renderAuthorTab(sec){
+  let s = {};
+  try{ s = JSON.parse(localStorage.getItem('mk_authorContent')) || {}; } catch(e){}
+  if(sec==='websites'){
+    const lines = (s.websites||getDefaultWebsitesText()).split('\n').filter(l=>l.trim());
+    const grid = document.querySelector('#tab-websites .sites-grid');
+    if(!grid) return;
+    grid.innerHTML = lines.map(line=>{
+      const [name,url,desc] = line.split('|').map(x=>x.trim());
+      if(!name||!url) return '';
+      return `<a href="${url}" target="_blank" class="site-card"><h4><i class="fas fa-globe" style="color:var(--champagne);margin-right:.4rem"></i>${name}</h4><p>${desc||''}</p><div class="site-url">${url.replace(/https?:\/\//,'')}</div></a>`;
+    }).join('');
+  } else if(sec==='publications'){
+    const lines = (s.publications||getDefaultPublicationsText()).split('\n').filter(l=>l.trim()&&!l.startsWith('#'));
+    const booksEl = document.querySelector('#tab-publications .pub-list:first-of-type');
+    const papersEl = document.querySelectorAll('#tab-publications .pub-list')[1];
+    if(!booksEl||!papersEl) return;
+    const books = lines.filter(l=>l.includes('|Book|')||l.includes('| Book |'));
+    const papers = lines.filter(l=>!l.includes('|Book|')&&!l.includes('| Book |'));
+    const buildItem = line => {
+      const parts = line.split('|').map(x=>x.trim());
+      const [title,type,isbnOrUrl,linkText] = parts;
+      const isUrl = isbnOrUrl&&isbnOrUrl.startsWith('http');
+      const isbn = !isUrl ? isbnOrUrl : '';
+      const url = isUrl ? isbnOrUrl : 'https://www.elivapress.com/en/authors/author-9188441151/';
+      return `<div class="pub-item"><h4>${title||''}</h4><div class="pub-meta">${type||''}${isbn?` <span class="isbn-badge">ISBN: ${isbn}</span>`:''}</div><a href="${url}" target="_blank"><i class="fas fa-external-link-alt"></i> ${linkText||'View'}</a></div>`;
+    };
+    booksEl.innerHTML = books.map(buildItem).join('');
+    papersEl.innerHTML = papers.map(buildItem).join('');
+  } else if(sec==='apps'){
+    const lines = (s.apps||getDefaultAppsText()).split('\n').filter(l=>l.trim());
+    const grid = document.querySelector('#tab-apps .apps-grid');
+    if(!grid) return;
+    grid.innerHTML = lines.map(line=>{
+      const [name,url,icon,desc] = line.split('|').map(x=>x.trim());
+      if(!name||!url) return '';
+      return `<a href="${url}" target="_blank" class="app-card"><div class="app-icon">${icon||'🌐'}</div><h4>${name}</h4><p>${desc||''}</p></a>`;
+    }).join('');
+  } else if(sec==='profiles'){
+    const lines = (s.profiles||getDefaultProfilesText()).split('\n').filter(l=>l.trim());
+    const grid = document.querySelector('#tab-profiles .profiles-grid');
+    if(!grid) return;
+    grid.innerHTML = lines.map(line=>{
+      const [name,url,iconCls,desc] = line.split('|').map(x=>x.trim());
+      if(!name||!url) return '';
+      return `<a href="${url}" target="_blank" class="profile-card"><i class="${iconCls||'fas fa-link'}"></i><h4>${name}</h4><p>${desc||''}</p></a>`;
+    }).join('');
+  }
+}
+
+function getDefaultWebsitesText(){
+  return `WomenHub | https://womenhub.sbs/ | Main platform — empowering women worldwide
+BloomWell | http://bloomwell.womenhub.sbs/ | Wellness and personal growth for women
+Her World | http://herworld.womenhub.sbs/ | Stories, lifestyle and inspiration for women
+Lumière Beauty | http://lumierebeauty.womenhub.sbs/ | Premium beauty tips and skincare insights
+Your Beauty Your Glow | http://yourbeautyyourglow.womenhub.sbs/ | Personalized beauty and glow guides
+She Rises | http://sherises.womenhub.sbs/ | Women empowerment and leadership
+Perfect Beauty Tips | http://perfectbeautytips.womenhub.sbs/ | Expert tips for flawless beauty routines
+La Cunia Cooking Recipes | http://lacunia-cooking-recipes.womenhub.sbs/ | Delicious recipes and culinary inspiration
+Save Our Kitchen | http://saveour-kitchen.womenhub.sbs/ | Traditional recipes and kitchen wisdom
+Med Rank SEO | https://mariakanwal123.github.io/med-rank-seo/ | Medical SEO and digital marketing services`;
+}
+function getDefaultPublicationsText(){
+  return `Revealing Environmental Influences on Breast Cancer Risk | Book | 978-1-304-42043-5 | View on Eliva Press
+Progressive Voices: Charting Women's Empowerment | Book | 978-1-304-43380-0 | View on Eliva Press
+Pakistan's Economic Transformation from Agrarian Society to an Emerging Market | Book | 978-1-304-42026-8 | View on Eliva Press
+Death or Evolution of Globalization during COVID-19 Era | Book | 978-1-304-42030-5 | View on Eliva Press
+Rise of Chinese Public Diplomacy during COVID-19 Era | Book | https://www.elivapress.com/en/authors/author-9188441151/ | View on Eliva Press
+Assessing the Impact of the 2024 Hualien Earthquake in Taiwan | Research Paper | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4786199 | Read on SSRN
+Natural Disaster Earthquake in Turkiye and Syria 2023: Humanitarian Response | Research Paper | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4382051 | Read on SSRN
+China Pakistan Economic Corridor (CPEC) 10 Years Celebrations | Research Paper | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4667601 | Read on SSRN
+3 Generative AI Applications for IoT You Must Know About | Research Paper | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4667577 | Read on SSRN
+Brexit and its Implications for European Union | Research Paper | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4312258 | Read on SSRN
+Floods in Pakistan: Global Warming or Foreign Nations | Research Paper | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4300138 | Read on SSRN
+Rise of Chinese Public Diplomacy during COVID-19 Era | Research Paper | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4126228 | Read on SSRN
+Nuclear Weapons a Source of Peace and Stability Between India and Pakistan | Research Paper | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4105194 | Read on SSRN
+Death of Globalization during COVID-19 Era | Research Paper | https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4101253 | Read on SSRN`;
+}
+function getDefaultAppsText(){
+  return `Ramadan Calendar 2026 | https://mariakanwal123.github.io/ramadan-calendar-2026/ | 🌙 | Complete Ramadan calendar with prayer times, fasting schedules and Islamic dates
+Little Muslims Islamic App 2026 | https://mariakanwal123.github.io/little-muslims-islamic-app-2026/ | ☪️ | Educational Islamic app designed for children — prayers, duas, and learning
+Ramadan 2026 Wellness Guide | https://mariakanwal123.github.io/ramadan-2026-wellness-guide/ | 💚 | Health and wellness tips for a nourishing and balanced Ramadan experience`;
+}
+function getDefaultProfilesText(){
+  return `LinkedIn | https://www.linkedin.com/in/maria-kanwal-637629207/ | fab fa-linkedin | Professional profile & career history
+SSRN | https://ssrn.com/author=5225172 | fas fa-university | Social Science Research Network
+ORCID | https://orcid.org/0000-0003-1528-4424 | fas fa-id-card | ID: 0000-0003-1528-4424
+Google Scholar | https://scholar.google.com/citations?user=6jmGlYwAAAAJ | fas fa-graduation-cap | Scholar ID: 6jmGlYwAAAAJ
+Academia.edu | https://independent.academia.edu/kanwalmaria1 | fas fa-book-open | Research papers & academic works
+Eliva Press | https://www.elivapress.com/en/authors/author-9188441151/ | fas fa-print | Published books and author page
+Blogger | https://maria-kanwal.blogspot.com/ | fab fa-blogger | Personal blog and writings`;
+}
+
 // ── INIT ────────────────────────────────────────
 // ── EXPOSE ALL FUNCTIONS GLOBALLY ────────────────────────────────
 window.showPage=showPage;
@@ -1458,6 +1636,9 @@ window.saveHomeContent=saveHomeContent;
 window.saveAboutContent=saveAboutContent;
 window.saveBlogsContent=saveBlogsContent;
 window.saveContactContent=saveContactContent;
+window.openAuthorEditModal=openAuthorEditModal;
+window.closeAuthorEditModal=closeAuthorEditModal;
+window.saveAuthorEdit=saveAuthorEdit;
 
 document.addEventListener('DOMContentLoaded',function(){
   loadBlogsFromStorage();
